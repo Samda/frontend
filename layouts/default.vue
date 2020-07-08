@@ -1,8 +1,27 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <main>
+    <v-app id="inspire">
+      <Navbar v-if="isLoggedIn"/>
+      <v-main>
+        <Nuxt />
+      </v-main>
+    </v-app>
+    <!-- <Navbar /> -->
+
+  </main>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar'
+
+export default {
+  watch: {
+    isLoggedIn(){
+      return this.$store.rootState.isLoggedIn
+    }
+  }
+}
+</script>
 
 <style>
 html {

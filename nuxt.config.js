@@ -42,6 +42,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '@/plugins/vuetify.js'
   ],
   /*
   ** Auto import components
@@ -52,25 +53,71 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    // '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/bulma',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    vuetify: {
+      //what ever options you may like
+    },
+    vender: ['axios', 'vuetify'],
     postcss: {
       preset: {
         features: {
           customProperties: false
         }
+      },
+
+      extend(config, { isDev }) {
+        const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
+        vueLoader.options.transformToRequire['img'] = ['src', 'data-src']
+        if (isClient) {
+          vue.transformAssetUrls.video = ['src', 'poster']
+        }
       }
-    },
+    }
+  },
+  axios: {
+    baseURL: 'http://localhost:3000/api'
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'auth/login',
+            method: 'post',
+            propertyName: 'data.token',
+          },
+          user: {
+            url: 'v1/users/:id',
+            method: 'get',
+            propertyName: 'data.user'
+          },
+          logout: false,
+          headers: {
+            contentType: "application/json"
+          }
+          // logout: {
+          //   url: 'auth/logout',
+          //   method: 'post',
+          //   propertyName: 'data.token',
+          // }
+        }
+      }
+    }
   }
 }
