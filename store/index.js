@@ -8,6 +8,14 @@ export const mutations = {
     state.isLoggedIn = false
     this.$router.push({ path: '/' })
   },
+  async userLogin(stats) {
+    try {
+      let response = await this.$auth.loginWith('local', { data: this.login })
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
+  },
 
   loginUser(state) {
     state.isLoggedIn = true
@@ -16,6 +24,9 @@ export const mutations = {
 }
 
 export const actions = {
+  userLogin({commit}){
+    commit('userLogin')
+  },
   loginUser({commit}){
     commit('loginUser')
   },

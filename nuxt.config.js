@@ -15,7 +15,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   server: {
-    port: 8000, // default: 3000
+    port: 8000, // default: 8000
     host: '0.0.0.0' // default: localhost
   },
   head: {
@@ -70,9 +70,6 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    vuetify: {
-      //what ever options you may like
-    },
     vender: ['axios', 'vuetify'],
     postcss: {
       preset: {
@@ -94,28 +91,34 @@ export default {
     baseURL: 'http://localhost:3000/api'
   },
   auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
     strategies: {
       local: {
         endpoints: {
+          headers: {
+            contentType: "application/json"
+          },
           login: {
             url: 'auth/login',
             method: 'post',
             propertyName: 'data.token',
           },
-          user: {
-            url: 'v1/users/:id',
-            method: 'get',
-            propertyName: 'data.user'
-          },
-          logout: false,
-          headers: {
-            contentType: "application/json"
+          user: false,
+          // user: {
+          //   url: 'v1/users/:id',
+          //   method: 'get',
+          //   propertyName: 'data.user'
+          // },
+          logout: {
+            url: 'auth/logout',
+            method: 'post',
+            propertyName: 'data.token',
           }
-          // logout: {
-          //   url: 'auth/logout',
-          //   method: 'post',
-          //   propertyName: 'data.token',
-          // }
         }
       }
     }

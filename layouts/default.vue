@@ -1,23 +1,31 @@
 <template>
-  <main>
+  <v-main>
     <v-app id="inspire">
-      <Navbar v-if="isLoggedIn"/>
-      <v-main>
-        <Nuxt />
-      </v-main>
+      <Navbar v-if="$auth.loggedIn"/>
+        <v-container fluid>
+          <Nuxt v-if="$auth.loggedIn" />
+          <LoginForm :submitForm="userLogin" v-if="!$auth.loggedIn"/>
+        </v-container>
     </v-app>
-    <!-- <Navbar /> -->
-
-  </main>
+  </v-main>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
 
 export default {
-  watch: {
-    isLoggedIn(){
-      return this.$store.rootState.isLoggedIn
+  created(){
+    console.log(this.$auth.loggedIn)
+    console.log(this.$auth)
+  },
+  methods: {
+    async userLogin(loginInfo) {
+      try {
+        let response = await this.$auth.loginWith('local', { data: loginInfo })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }

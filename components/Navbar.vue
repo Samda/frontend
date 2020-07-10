@@ -68,7 +68,9 @@
           <v-img src="https://www.khland.com.kh/assets/images/kh_lg.png"></v-img>
       </v-list-item-avatar> -->
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">KH LAND</span>
+        <span class="title">
+          <nuxt-link class="black--text" to="/">KH LAND</nuxt-link>
+        </span>
         <v-spacer></v-spacer>
         <!-- <span>{{ getLoggedIn }}</span> -->
       </v-toolbar-title>
@@ -85,8 +87,9 @@
       drawer: true,
       items: [
         { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/houses" },
-        { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/users" },
-        { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/orders" },
+        { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/house_models" },
+        { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/modified_houses" },
+        { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/utilities'},
         { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/agencies" },
         { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/import" }
       ],
@@ -106,7 +109,7 @@
         this.$router.push({ path: route })
       },
       Logout(){
-        this.$store.commit('Logout')
+        this.$auth.logout()
       }
     },
     computed: {

@@ -16,10 +16,11 @@
           >
             <v-card class="elevation-12">
               <v-toolbar
-                color="primary"
+                color="teal darken-1"
                 dark
                 flat
               >
+                <v-spacer></v-spacer>
                 <v-toolbar-title >Login</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
@@ -45,7 +46,11 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="submitForm(loginInfo)">Login</v-btn>
+                <v-btn
+                class="white--text"
+                color="teal darken-1"
+                @click="submitForm(loginInfo)"
+                >Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
