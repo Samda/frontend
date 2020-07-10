@@ -42,7 +42,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/vuetify.js'
+    '@/plugins/vuetify.js',
+    { src: '@/plugins/vue-html2pdf', mode: 'client' }
   ],
   /*
   ** Auto import components
