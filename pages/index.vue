@@ -10,33 +10,7 @@
         <cardVerticle :item="item"/>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col
-        cols="3"
-        md="3"
-      >
-      <cardIcon color="color" />
-      </v-col>
-      <v-col
-        cols="3"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-      <v-col
-        cols="3"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-      <v-col
-        cols="3"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-    </v-row>
-    <v-row>
+    <v-row dense>
       <v-col col="6" md="6">
         <v-card>
           <v-spacer></v-spacer>
@@ -46,6 +20,32 @@
           <v-spacer></v-spacer>
           <VueApexCharts type="bar" height="350" :options="chartOptions" :series="series"/>
         </v-card>
+      </v-col>
+    </v-row>
+    <v-row dense>
+      <v-col
+        cols="12"
+        md="3"
+      >
+      <cardIcon color="color" />
+      </v-col>
+      <v-col
+        cols="12"
+        md="3"
+      >
+        <cardIcon />
+      </v-col>
+      <v-col
+        cols="12"
+        md="3"
+      >
+        <cardIcon />
+      </v-col>
+      <v-col
+        cols="3"
+        md="3"
+      >
+        <cardIcon />
       </v-col>
     </v-row>
   </v-container>
@@ -65,10 +65,10 @@ export default {
     color: '#1F7087',
     items: [
       {
-        icon: 'mdi-folder-home',
+        icon: 'mdi-home-circle-outline',
         color: '#633336',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
-        title: 'ផ្ទះបានកំណត់',
+        title: 'ផ្ទះអតិថិជនរៀប',
         total: '120',
         unit: 'ខ្នង'
       },
@@ -176,8 +176,7 @@ export default {
         }
       }
     },
-  })
-
+  }),
   // computed: {
   //   loginUser(){
   //     return this.$store.$auth.$state.loggedIn

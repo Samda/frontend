@@ -1,11 +1,16 @@
 <template>
-  <div>
+  <v-container fluid>
     <cardHouse />
-  </div>
+  </v-container>
 </template>
 <script>
   import cardHouse from '@/components/cardHouse'
   export default {
+    data(){
+      return {
+        dialog: false
+      }
+    },
     components: {
       cardHouse
     }

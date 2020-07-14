@@ -1,42 +1,65 @@
 export const state = () => ({
-  counter: 0,
-  isLoggedIn: false
 })
 
 export const mutations = {
-  Logout(state) {
-    state.isLoggedIn = false
-    this.$router.push({ path: '/' })
+  setAuth({state}, data){
+    let auth_user = JSON.stringify(data.results)
+    localStorage.setItem('auth_user', auth_user)
+    this.$auth.setUserToken(data.results.auth_token)
+    this.$auth.setUser(data.results.user)
   },
-  async userLogin(stats) {
+}
+
+export const actions = {
+  logOut() {
+    localStorage.removeItem('auth_user')
+    this.$auth.logout()
+  },
+
+  async userLogin({commit}, loginInfo) {
     try {
-      let response = await this.$auth.loginWith('local', { data: this.login })
-      console.log(response)
-    } catch (err) {
+      let response = await this.$auth.loginWith('local', { data: loginInfo }).then((res) => {
+        let data = res.data
+        commit('setAuth', data)
+      })
+      this.$router.push('/')
+    } catch (error) {
+      let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
       console.log(err)
     }
   },
 
-  loginUser(state) {
-    state.isLoggedIn = true
-    this.$router.push({ path: '/home' })
-  }
-}
+  async addHouseModel({commit}, formData){
+    try{
+      let response = await this.$axios.post('/house_models', formData)
+      return res;
+    } catch (error) {
+      let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
+      console.log(err)
+    }
+  },
 
-export const actions = {
-  userLogin({commit}){
-    commit('userLogin')
+  async addHouse({}, data) {
+    let res = await this.$axios.post('/houses', data)
+    return res;
   },
-  loginUser({commit}){
-    commit('loginUser')
-  },
-  Logout({commit}){
-    commit('Logout')
+
+  async getHouses() {
+    let res = await this.$axios.get('/v1/houses')
+    return res;
   }
 }
 
 export const getters = {
+
   isLoggedIn(state, getters){
-    return state.isLoggedIn
+    return state.auth.user
+  },
+
+  getLoggedIn(){
+    return this.$store.$auth.loggedIn
+  },
+  User(){
+    return this.$store.$auth.user
   }
 }

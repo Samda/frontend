@@ -19,7 +19,7 @@ export default {
     host: '0.0.0.0' // default: localhost
   },
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || 'KH LAND Co.,ltd.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { defer: true, src: "https://use.fontawesome.com/releases/v5.3.1/js/all.js" }
+      // { defer: true, src: "https://use.fontawesome.com/releases/v5.3.1/js/all.js" }
     ]
   },
   /*
@@ -43,7 +43,7 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify.js',
-    { src: '@/plugins/vue-html2pdf', mode: 'client' }
+    '@/plugins/axios.js'
   ],
   /*
   ** Auto import components
@@ -89,13 +89,18 @@ export default {
     }
   },
   axios: {
-    baseURL: 'http://localhost:3000/api'
+    baseURL: process.env.API_URL || 'http://localhost:3000/api'
   },
   auth: {
+    cookie: {
+      options: {
+        secure: false,
+      },
+    },
     redirect: {
       login: '/login',
       logout: '/',
-      callback: '/login',
+      // callback: '/login',
       home: '/'
     },
     strategies: {
@@ -105,22 +110,26 @@ export default {
             contentType: "application/json"
           },
           login: {
-            url: 'auth/login',
+            url: '/auth/login',
             method: 'post',
             propertyName: 'data.token',
           },
           user: false,
+          logout: false,
           // user: {
           //   url: 'v1/users/:id',
           //   method: 'get',
           //   propertyName: 'data.user'
           // },
-          logout: {
-            url: 'auth/logout',
-            method: 'post',
-            propertyName: 'data.token',
-          }
-        }
+          // logout: {
+          //   url: 'auth/logout',
+          //   method: 'post',
+          //   propertyName: 'data.token',
+          // }
+        },
+        tokenType: '',
+        tokenName: 'x-auth',
+        autoFetchUser: false
       }
     }
   }

@@ -96,7 +96,7 @@
             small
             text
           >
-            User Name
+            {{auth.user.name}}
             <v-icon right dark>mdi-account</v-icon>
           </v-btn>
         </template>
@@ -119,52 +119,51 @@
   </div>
 </template>
 <script>
+  import { mapState } from 'vuex'
 
   export default {
     props: {
       source: String,
     },
-    data: () => ({
-      drawer: true,
-      user_menu_items: [
-        { icon: 'mdi-user', text: 'Profile', route: "/profile" },
-        { icon: 'mdi-user', text: 'update', route: "/update" },
-        { icon: 'mdi-logout', text: 'Logout', route: "/auth/logout" }
-      ],
-      items: [
-        { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/houses" },
-        { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/house_models" },
-        { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/modified_houses" },
-        { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/utilities'},
-        { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/agencies" },
-        { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/import" }
-      ],
-      items2: [
-        { picture: 28, text: 'Joseph' },
-        { picture: 38, text: 'Apple' },
-        { picture: 48, text: 'Xbox Ahoy' },
-        { picture: 58, text: 'Nokia' },
-        { picture: 78, text: 'MKBHD' },
-      ]
-    }),
+    data () {
+      return {
+        drawer: true,
+        user_menu_items: [
+          { icon: 'mdi-user', text: 'Profile', route: "/profile" },
+          { icon: 'mdi-user', text: 'update', route: "/update" },
+          { icon: 'mdi-logout', text: 'Logout', route: "/auth/logout" }
+        ],
+        items: [
+          { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/houses" },
+          { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/house_models" },
+          { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/modified_houses" },
+          { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/utilities'},
+          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/agencies" },
+          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/import" }
+        ],
+        items2: [
+          { picture: 28, text: 'Joseph' },
+          { picture: 38, text: 'Apple' },
+          { picture: 48, text: 'Xbox Ahoy' },
+          { picture: 58, text: 'Nokia' },
+          { picture: 78, text: 'MKBHD' },
+        ]
+      }
+    },
     created () {
       this.$vuetify.theme.tealDarken1 = true
     },
     methods: {
-      alert(){
-        alert('hi')
-      },
       Linkto(route){
         this.$router.push({ path: route })
       },
       Logout(){
-        this.$auth.logout()
+        this.$store.dispatch('logOut')
+        this.$router.push('/login')
       }
     },
     computed: {
-      // getLoggedIn(){
-      //   return this.$store.$state.isLoggedIn
-      // }
+      ...mapState(['auth'])
     }
 
   }

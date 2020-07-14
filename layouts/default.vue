@@ -2,10 +2,9 @@
   <v-main>
     <v-app id="inspire">
       <Navbar v-if="$auth.loggedIn"/>
-        <v-container fluid>
-          <Nuxt v-if="$auth.loggedIn" />
-          <LoginForm :submitForm="userLogin" v-if="!$auth.loggedIn"/>
-        </v-container>
+      <div>
+        <Nuxt/>
+      </div>
     </v-app>
   </v-main>
 </template>
@@ -14,18 +13,16 @@
 import Navbar from '@/components/Navbar'
 
 export default {
-  created(){
-    console.log(this.$auth.loggedIn)
-    console.log(this.$auth)
-  },
-  methods: {
-    async userLogin(loginInfo) {
-      try {
-        let response = await this.$auth.loginWith('local', { data: loginInfo })
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-      }
+  beforeCreate() {
+
+    let auth = JSON.parse(localStorage.getItem('auth_user'))
+    if(auth){
+      this.$nuxt.$auth.setToken('local', auth.auth_token)
+      this.$auth.setUser(auth.user)
+      this.$axios.defaults.headers.common['Authorization'] = auth.auth_token
+    }
+    else {
+      this.$router.push('/login')
     }
   }
 }

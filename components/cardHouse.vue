@@ -1,8 +1,8 @@
 <template lang="html">
   <v-row dense>
     <v-col
-      v-for="card in cards"
-      :key="card.title"
+      v-for="(card, index) in cards"
+      :key="index"
       :cols="card.flex"
     >
     <v-card>
