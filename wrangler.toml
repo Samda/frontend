@@ -1,0 +1,10 @@
+name = "frontend"
+type = "webpack"
+account_id = "d3f49fa63e40367f9068c6ee1805425a"
+workers_dev = true
+route = ""
+zone_id = ""
+
+[site]
+bucket = "dist"
+entry-point = "workers-site"

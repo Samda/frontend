@@ -4,6 +4,10 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
+  router: {
+    base: '//'
+  },
+
   mode: 'spa',
   /*
   ** Nuxt target
@@ -26,7 +30,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/khland.png' }
     ],
     script: [
       // { defer: true, src: "https://use.fontawesome.com/releases/v5.3.1/js/all.js" }
@@ -67,7 +71,7 @@ export default {
     '@nuxtjs/auth'
   ],
   /*
-  ** Build configuration
+  ** Build configuratioan
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
@@ -89,7 +93,7 @@ export default {
     }
   },
   axios: {
-    baseURL: process.env.API_URL || 'http://localhost:3000/api'
+    baseURL: 'http://localhost:4000/api'
   },
   auth: {
     cookie: {

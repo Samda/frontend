@@ -7,7 +7,10 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
-    "serve": "nuxt serve"
+    "serve": "nuxt serve",
+    "build:gh": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
@@ -16,9 +19,7 @@
     "apexcharts": "^3.19.3",
     "babel-loader": "^8.1.0",
     "file-loader": "^6.0.0",
-    "node-sass": "^4.14.1",
     "nuxt": "^2.13.0",
-    "sass-loader": "^9.0.0",
     "url-loader": "^4.1.0",
     "vee-validate": "^3.3.7",
     "vue-apexcharts": "^1.5.3",
@@ -27,6 +28,10 @@
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^9.0.2",
     "vuetify-loader": "^1.5.0"
   }
 }

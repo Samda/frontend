@@ -1,65 +1,37 @@
-<template>
-  <v-container fluid>
-    <v-row dense>
-      <v-col
-        v-for="(item, i) in items"
-        :key="i"
-        cols="12"
-        md="3"
-      >
-        <cardVerticle :item="item"/>
-      </v-col>
-    </v-row>
-    <v-row dense>
-      <v-col col="6" md="6">
-        <v-card>
-          <v-spacer></v-spacer>
-          <v-card-title
-            class="headline"
-          >តារាងនៃការលក់ប្រចាំខែ</v-card-title>
-          <v-spacer></v-spacer>
-          <VueApexCharts type="bar" height="350" :options="chartOptions" :series="series"/>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row dense>
-      <v-col
-        cols="12"
-        md="3"
-      >
-      <cardIcon color="color" />
-      </v-col>
-      <v-col
-        cols="12"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-      <v-col
-        cols="12"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-      <v-col
-        cols="3"
-        md="3"
-      >
-        <cardIcon />
-      </v-col>
-    </v-row>
-  </v-container>
+<template lang="pug">
+  v-container(fluid)
+    v-row(dense)
+      v-col(cols="12" md="6" class="pa-0")
+        v-row(dense)
+          v-col( v-for="(item, i) in items" :key="i" cols="12" md="6")
+            cardVerticle(:item="item")
+      v-col( cols="12" md="6" class="pl-4")
+        v-card
+          v-spacer
+          v-card-title.headline តារាងនៃការលក់ប្រចាំខ
+          v-spacer
+          annualSale
+
+    v-row( dense)
+      v-col(cols="12" md="3")
+        cardIcon( color="color" )
+      v-col(cols="12" md="3")
+        cardIcon
+      v-col( cols="12" md="3")
+        cardIcon
+      v-col( cols="3" md="3")
+        cardIcon
 </template>
 
 <script>
 import cardIcon from '@/components/cardIcon'
 import cardVerticle from '@/components/cardVerticle'
-
+import annualSale from '@/components/annualSale'
 export default {
   components: {
     cardIcon,
     cardVerticle,
-    VueApexCharts: () => import('vue-apexcharts')
+    annualSale
   },
   data: () => ({
     color: '#1F7087',
@@ -96,92 +68,8 @@ export default {
         total: '២០០',
         unit: 'នាក់'
       }
-    ],
-    series: [{ // vue VueApexCharts
-      name: 'Inflation',
-      data: [40.5, 36.1, 30.0, 20.1, 20.0, 40.6, 23.2, 42.3, 61.4, 60.8, 70.5, 90.2]
-    }],
-    chartOptions: {
-      chart: {
-        height: 350,
-        type: 'bar',
-      },
-      plotOptions: {
-        bar: {
-          dataLabels: {
-            position: 'top', // top, center, bottom
-          },
-        }
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: function (val) {
-          return val + "%";
-        },
-        offsetY: -20,
-        style: {
-          fontSize: '12px',
-          colors: ["#304758"]
-        }
-      },
-
-      xaxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        position: 'top',
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false
-        },
-        crosshairs: {
-          fill: {
-            type: 'gradient',
-            gradient: {
-              colorFrom: '#D8E3F0',
-              colorTo: '#BED1E6',
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            }
-          }
-        },
-        tooltip: {
-          enabled: true,
-        }
-      },
-      yaxis: {
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          show: false,
-          formatter: function (val) {
-            return val + "%";
-          }
-        }
-
-      },
-      title: {
-        text: '',
-        floating: true,
-        offsetY: 330,
-        align: 'center',
-        style: {
-          fontSize: '12px',
-          color: '#444'
-        }
-      }
-    },
-  }),
-  // computed: {
-  //   loginUser(){
-  //     return this.$store.$auth.$state.loggedIn
-  //   }
-  // }
+    ]
+  })
 }
 </script>
 

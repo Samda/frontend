@@ -1,12 +1,8 @@
-<template>
-  <v-main>
-    <v-app id="inspire">
-      <Navbar v-if="$auth.loggedIn"/>
-      <div>
-        <Nuxt/>
-      </div>
-    </v-app>
-  </v-main>
+<template lang="pug">
+  v-main
+    v-app(id="inspire")
+      Navbar(v-if="$auth.loggedIn")
+      Nuxt
 </template>
 
 <script>

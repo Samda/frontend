@@ -1,80 +1,34 @@
-<template>
-  <v-container>
-    <v-row
-      align="center"
-      justify="center"
-    >
-      <v-col
-        cols="12"
-        sm="12"
-        md="8"
-      >
-        <v-card
-        class="mx-auto"
-        max-width="500"
-        outlined >
-          <v-toolbar
-            color="teal darken-1"
-            dark
-            flat
-          >
-            <v-spacer> </v-spacer>
-            <v-toolbar-title >Regiser</v-toolbar-title>
-            <v-spacer> </v-spacer>
-          </v-toolbar>
-          <v-card-text>
-            <ValidationObserver ref="observer" v-slot="{ validate, reset }">
-              <form>
-                <ValidationProvider v-slot="{ errors }" name="Name" rules="required|max:10">
-                  <v-text-field
-                    v-model="register.name"
-                    :counter="10"
-                    :error-messages="errors"
-                    label="Name"
-                    required
-                  ></v-text-field>
-                </ValidationProvider>
-                <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
-                  <v-text-field
+<template lang="pug">
+  v-container
+    v-row(align="center" justify="center")
+      v-col(cols="12" sm="12" md="8")
+        v-card.mx-auto(max-width="500" outlined)
+          v-toolbar( color="teal darken-1" dark flat)
+            v-spacer
+            v-toolbar-title Regiser
+            v-spacer
+          v-card-text
+            ValidationObserver(ref="observer" v-slot="{ validate, reset }")
+              form
+                ValidationProvider(v-slot="{ errors }" name="email" rules="required|email")
+                  v-text-field(
                     v-model="register.email"
                     :error-messages="errors"
                     label="E-mail"
-                    required
-                  ></v-text-field>
-                </ValidationProvider>
-
-                <ValidationProvider name="password" rules="required|password:confirm" v-slot="{ errors }">
-                  <v-text-field
+                    required)
+                ValidationProvider(
+                  name="password"
+                  rules="required|password"
+                  v-slot="{ errors }")
+                  v-text-field(
                     type="password"
                     v-model="register.password"
                     :error-messages="errors"
                     label="Password"
-                    required
-                  ></v-text-field>
-                    <span>{{ errors[0] }}</span>
-                </ValidationProvider>
-
-                <ValidationProvider name="confirm" rules="required" v-slot="{ errors }">
-                  <v-text-field
-                    type="password"
-                    v-model="register.password_confirmation"
-                    :error-messages="errors"
-                    label="Confirm Password"
-                    required
-                  ></v-text-field>
-                  <span>{{ errors[0] }}</span>
-                </ValidationProvider>
-              </form>
-            </ValidationObserver>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn class="mr-4" @click="registerUser">submit</v-btn>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+                    required)
+          v-card-actions
+            v-btn(class="mr-4" @click="registerUser" ) submit
+            v-spacer
 </template>
 
 <script>
@@ -112,16 +66,16 @@
       ValidationObserver,
     },
     data: () => ({
-      name: '',
-      email: '',
-      password: '',
-      confirm_password: '',
+      // name: '',
+      // email: '',
+      // password: '',
+      // confirm_password: '',
       loading: false,
       register: {
-        name: '',
+        // name: '',
         email: '',
         password: '',
-        password_confirmation: ''
+        // password_confirmation: ''
       },
     }),
 
@@ -131,27 +85,10 @@
       //   // this.$refs.observer.validate()
       // }
       async registerUser() {
-        this.loading = true;
         let data = this.register;
-        try {
-          await this.$axios.post("/auth/signup", data);
-          this.$router.push("/login");
-          this.loading = false;
-          // this.$notify({
-          //   group: "success",
-          //   title: "Success!",
-          //   text: "Account created successfully"
-          // });
-        } catch (error) {
-          this.loading = false;
-          // this.$notify({
-          //   group: "error",
-          //   title: "Error!",
-          //   text: error.response
-          //     ? error.response.data.error
-          //     : "Sorry an error occured, check your internet"
-          // });
-        }
+        this.$axios.defaults.baseURL = "http://localhost:4000/api"
+        let response = await this.$axios.post("/users/signup", data)
+        console.log(response)
       }
     },
   }

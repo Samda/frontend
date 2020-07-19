@@ -19,7 +19,7 @@
       <v-card-title>
         <v-spacer></v-spacer>
         <v-icon
-          size="100"
+          size="80"
         >
           {{item.icon}}
         </v-icon>
