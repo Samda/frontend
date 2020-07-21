@@ -45,7 +45,7 @@ export const actions = {
   },
 
   async getHouses() {
-    let res = await this.$axios.get('/v1/houses')
+    let res = await this.$axios.get('/houses')
     return res;
   }
 }

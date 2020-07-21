@@ -38,11 +38,12 @@ export default {
     items: [
       {
         icon: 'mdi-home-circle-outline',
-        color: '#633336',
+        color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ផ្ទះអតិថិជនរៀប',
         total: '120',
-        unit: 'ខ្នង'
+        unit: 'ខ្នង',
+        link: 'configured_houses'
       },
       {
         icon: 'mdi-home-group',
@@ -50,23 +51,35 @@ export default {
         src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
         title: 'ម៉ូតសំរាប់ផ្ទះគំរូ',
         total: '១០០',
-        unit: 'ម៉ូត'
+        unit: 'ម៉ូត',
+        link: 'house_models'
       },
       {
         icon: 'mdi-account-group',
-        color: '#2d5089',
+        color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ភ្នាក់ងារលក់',
         total: '៧៧៧',
-        unit: 'នាក់'
+        unit: 'នាក់',
+        link: 'agencies'
       },
       {
         icon: 'mdi-account-tie',
-        color: '#42c7b2',
+        color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ភ្នាក់ងារទីផ្សារ',
         total: '២០០',
-        unit: 'នាក់'
+        unit: 'នាក់',
+        link: '/team_sales'
+      },
+      {
+        icon: 'mdi-account-tie',
+        color: '#1F7087',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'Management',
+        total: '10',
+        unit: 'នាក់',
+        link: '/users'
       }
     ]
   })

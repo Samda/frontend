@@ -4,9 +4,10 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  router: {
-    base: '//'
-  },
+
+  // router: {
+  //   base: '/'
+  // },
 
   mode: 'spa',
   /*
@@ -23,7 +24,7 @@ export default {
     host: '0.0.0.0' // default: localhost
   },
   head: {
-    title: process.env.npm_package_name || 'KH LAND Co.,ltd.',
+    title: 'KH LAND Co.,ltd.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -93,7 +94,7 @@ export default {
     }
   },
   axios: {
-    baseURL: 'http://localhost:4000/api'
+    baseURL: process.env.npm_package_app_url || "http:locahost:3000/api/v1"
   },
   auth: {
     cookie: {

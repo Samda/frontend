@@ -1,10 +1,10 @@
 <template lang="pug">
   v-container
     v-row( align="center" justify="center")
-      v-col(cols="12" md="6")
+      v-col(cols="12" md="6" ms="8")
         v-card.elevation-12
           v-toolbar(
-            color="brown darken-2"
+            color="teal darken-2"
             dark
             flat)
             v-spacer
@@ -13,14 +13,14 @@
           v-card-text
             v-form
               v-text-field(
-                color="brown"
+                color="teal"
                 v-model="loginInfo.email"
                 label="Login"
                 name="login"
                 prepend-icon="mdi-account"
                 type="text")
               v-text-field(
-                color="brown"
+                color="teal"
                 :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                 v-model="loginInfo.password"
                 id="password"
@@ -31,11 +31,17 @@
                 :type="show1 ? 'text' : 'password'"
                 @click:append="show1 = !show1")
           v-card-actions
-            v-spacer
             v-btn(
-            class="white--text"
-            color="brown darken-2"
-            @click="submitForm(loginInfo)") Login
+              class="white--text ml-2"
+              color="teal darken-2"
+              @click="submitForm(loginInfo)") Login
+            v-btn(
+              class="white--text mr-5"
+              color="teal darken-2"
+              @click="submitForm(loginInfo)") Sing Up
+            v-spacer
+            span
+              nuxt-link(to="/forget_password") Forget password?
 </template>
 
 <script>
@@ -44,8 +50,8 @@ export default {
     return {
       show1: false,
       loginInfo: {
-        email: 'samda@email.com',
-        password: 'samda'
+        email: 'user1@email.com',
+        password: 'password'
       }
     }
   },
