@@ -17,9 +17,6 @@
         | {{ new Date().getFullYear() }}
         | &copy;
         strong KH LAND CO.,LTD.
-
-
-
 </template>
 
 <script>

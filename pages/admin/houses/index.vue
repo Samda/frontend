@@ -4,7 +4,7 @@
   </v-container>
 </template>
 <script>
-  import cardHouse from '@/components/cardHouse'
+  import cardHouse from '@/components/admin/cardHouse'
   export default {
     data(){
       return {

@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang="pug" scoped>
   v-container( fluid class="fill-height")
     v-row
       v-dialog(v-model="dialog" persistent max-width="600px")
@@ -100,6 +100,7 @@
 <script>
 
 export default {
+  layout: "admin",
   data() {
     return {
       e1: 1,

@@ -32,7 +32,7 @@
                   v-spacer
                 v-card-text
                   v-row
-                    v-col(cols="12" md="6" sm="6" v-for="user in users")
+                    v-col(cols="12" md="6" sm="6" :key="user + user.name" v-for="user in users")
                       v-card( color="teal dark-1" dark class="mt-2")
                         div(class="d-flex flex-no-wrap justify-space-between")
                           div
@@ -58,7 +58,7 @@
                   v-spacer
                 v-card-text
                   v-row
-                    v-col(cols="12" md="6" sm="6" v-for="user in users")
+                    v-col(cols="12" md="6" sm="6" :key="user" v-for="user in users")
                       v-card( color="teal dark-1" dark class="mt-2")
                         div(class="d-flex flex-no-wrap justify-space-between")
                           div
@@ -84,8 +84,9 @@
 </template>
 
 <script>
-import userForm from '@/components/users/userForm'
+import userForm from '@/components/admin/users/userForm'
 export default {
+  layout: 'admin',
   components: {
     userForm
   },
