@@ -28,75 +28,17 @@
               p(class="body-1 text-center") Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           v-col(cols="12" md="6" class="pa-10")
             v-img(src="https://customisedhomes.com/sites/all/themes/customisedhomes/images/Interior_banner.jpg")
-
-          v-btn(
-            outlined
-            class="comment-button-sheet"
-            color="brown darken-3"
-            fab
-            @click="comment_dialog = !comment_dialog"
-            )
-            v-icon(v-if="comment_dialog") mdi-close
-            v-icon(v-else) mdi-comment
-          div.comments-dialog
-            v-dialog(
-              transition="fab-transition"
-              class="comments-dialog"
-              v-model="comment_dialog"
-              max-width="500px")
-              v-card
-                v-card-title
-                  span Thanks for you feedback
-                div(class="text-center mt-12")
-                  span Rating
-                  v-rating(
-                    v-model="comment_attr.rating"
-                    color="yellow darken-3"
-                    background-color="grey darken-1"
-                    empty-icon="$ratingFull"
-                    half-increments
-                    hover)
-                v-spacer
-                v-menu(bottom left)
-                  v-btn(icon)
-                    v-icon mdi-dots-vertical
-                v-card-text
-                  form
-                    v-text-field(
-                      color="brown darken-1"
-                      v-model="comment_attr.title"
-                      :counter="10"
-                      label="Title"
-                      required)
-                    v-textarea(
-                      color="brown darken-1"
-                      v-model="comment_attr.comments"
-                      label="Comment"
-                      required)
-                  v-card-actions
-                    v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit(comment_attr)") submit
-                    v-btn(outlined color="brown darken-1" @click="comment_dialog = false") Close
+          feedBack
+      footerMain
 </template>
 
 <script>
-
+import footerMain from "@/components/clients/footerMain"
+import feedBack from "@/components/clients/feedBack"
 export default {
-  data() {
-    return {
-      comment_dialog: false,
-      comment_attr: {
-        title: "",
-        comments: "",
-        images: "",
-        rating: 4.5,
-      }
-    }
-  },
-
-  methods: {
-    formSubmit(formData){
-      console.log(formData)
-    }
+  components: {
+    feedBack,
+    footerMain
   }
 }
 </script>
@@ -126,16 +68,6 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-}
-.v-dialog {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.comment-button-sheet {
-  position: fixed !important;
-  right: 10px;
-  bottom: 10px;
 }
 
 </style>
