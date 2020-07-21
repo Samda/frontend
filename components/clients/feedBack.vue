@@ -1,25 +1,23 @@
 <template lang="pug">
-div
-  v-btn(
-    outlined
-    class="comment-button-sheet"
-    color="brown darken-3"
-    fab
-    @click="comment_dialog = !comment_dialog"
-    v-bind="attrs"
-    v-on="on")
-    v-icon(v-if="comment_dialog") mdi-close
-    v-icon(v-else) mdi-comment
-  div.comments-dialog
+  div
+    v-btn(
+      outlined
+      class="comment-button-sheet"
+      color="brown darken-3"
+      fab
+      @click="comment_dialog = !comment_dialog")
+      v-icon(v-if="comment_dialog") mdi-close
+      v-icon(v-else) mdi-comment
     v-dialog(
+      scrollable
       transition="fab-transition"
       class="comments-dialog"
       v-model="comment_dialog"
       max-width="500px")
       v-card
-        v-card-title
+        v-card-title(class="text-center")
           span Thanks for you feedback
-        div(class="text-center mt-12")
+        div(class="text-center")
           span Rating
           v-rating(
             v-model="comment_attr.rating"
@@ -28,7 +26,6 @@ div
             empty-icon="$ratingFull"
             half-increments
             hover)
-        v-spacer
         v-menu(bottom left)
           v-btn(icon)
             v-icon mdi-dots-vertical
@@ -37,17 +34,18 @@ div
             v-text-field(
               color="brown darken-1"
               v-model="comment_attr.title"
-              :counter="10"
               label="Title"
               required)
             v-textarea(
+              rows="3"
               color="brown darken-1"
               v-model="comment_attr.comments"
               label="Comment"
               required)
-          v-card-actions
-            v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit(comment_attr)") submit
-            v-btn(outlined color="brown darken-1" @click="comment_dialog = false") close
+        v-card-actions
+          v-spacer
+          v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit(comment_attr)") submit
+          v-btn(outlined color="brown darken-1" @click="comment_dialog = false") close
 </template>
 
 <script>

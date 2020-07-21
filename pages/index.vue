@@ -2,19 +2,14 @@
   v-container(fluid)
     v-row(dense)
       v-col(cols="12")
-        navBar
+    landingPageSection
 </template>
 
 <script>
-import navBar from "@/components/clients/navBar"
+import landingPageSection from "@/components/clients/landingPageSection"
 export default {
   components: {
-    navBar
-  },
-  data() {
-    return {
-
-    }
+    landingPageSection
   }
 }
 </script>

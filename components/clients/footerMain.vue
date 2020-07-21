@@ -9,7 +9,7 @@
             flat
             tile
             class="teal darken-1 white--text")
-            v-card-text(class="ml-n35")
+            v-card-text(class="ml-n8")
               v-btn(
                 v-for="icon in icons"
                 :key="icon"
@@ -26,7 +26,7 @@
               | Copyright
               | &copy;
               | {{ new Date().getFullYear() }}
-              strong(class="ml-2 mr-2") KHLAND CO.,LTD
+              span(class="ml-2 mr-2") KHLAND CO.,LTD
               | All Rights Reserved
 </template>
 
