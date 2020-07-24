@@ -1,9 +1,10 @@
 <template lang="pug">
-  h1 FROM ADMIN FOLDER
+  h1 About
 </template>
 
 <script>
 export default {
+  layout: 'admin'
 }
 </script>
 

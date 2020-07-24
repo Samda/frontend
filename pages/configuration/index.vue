@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 FROM ADMIN FOLDER
+h1 configuration
 </template>
 
 <script>

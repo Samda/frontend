@@ -1,15 +1,14 @@
 <template lang="pug">
-  v-container(fluid)
-    v-row(dense)
-      v-col(cols="12")
-        nav
-          label.logo KHLAND CO.,LTD.
+v-row
+  v-col(cols="12")
+    h1 Contact Page
 </template>
 
 <script>
 export default {
+  layout: "default"
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 </style>

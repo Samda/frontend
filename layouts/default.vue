@@ -11,6 +11,7 @@
 import navBar from "@/components/clients/navBar"
 import footerMain from "@/components/clients/footerMain"
 import feedBack from "@/components/clients/feedBack"
+
 export default {
   components: {
     feedBack,

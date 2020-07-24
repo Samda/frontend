@@ -4,6 +4,8 @@
       fluid
       class="fill-height"
     >
+    <h1 v-if="error.statusCode === 404">Page not found</h1>
+    <h1 v-else>An error occurred</h1>
     <v-row
       align="center"
       justify="center"
@@ -57,7 +59,8 @@
 
 <script>
 export default {
-  layout: 'error-layout'
+  layout: 'error-layout',
+  props: ['error'],
 }
 </script>
 

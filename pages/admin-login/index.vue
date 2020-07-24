@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  layout: "admin",
   methods: {
     userLogin(loginInfo) {
       this.$store.dispatch('userLogin', loginInfo)

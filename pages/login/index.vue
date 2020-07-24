@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 FROM ADMIN FOLDER
+  h1 login from client side
 </template>
 
 <script>

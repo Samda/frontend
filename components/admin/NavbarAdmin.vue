@@ -29,7 +29,7 @@
             link)
             v-list-item-avatar
               img(
-                :src="`https://randomuser.me/api/portraits/men/${item.picture}.jpg`"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKSEuKKwqIqbJH-NRiDHluGbuC9ysMW99BPA&usqp=CAU"
                 alt="")
             v-list-item-title(v-text="item.text")
         v-list
@@ -43,7 +43,7 @@
           <v-img src="https://www.khland.com.kh/assets/images/kh_lg.png"></v-img>
       v-toolbar-title(class="mr-12 align-center")
         span.title
-          nuxt-link(class="black--text" to="/") KH LAND
+          nuxt-link(class="black--text" to="/admin") KH LAND
         v-spacer
         //- <span>{{ getLoggedIn }}</span> -->
       v-spacer
@@ -69,26 +69,26 @@
     },
     data () {
       return {
-        drawer: true,
+        drawer: false,
         user_menu_items: [
-          { icon: 'mdi-user', text: 'Profile', route: "/profile" },
-          { icon: 'mdi-user', text: 'update', route: "/update" },
-          { icon: 'mdi-logout', text: 'Logout', route: "/auth/logout" }
+          { icon: 'mdi-user', text: 'Profile', route: "/admin/profile" },
+          { icon: 'mdi-user', text: 'update', route: "/admin/update" },
+          { icon: 'mdi-logout', text: 'Logout', route: "/admin/auth/logout" }
         ],
         items: [
-          { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/houses" },
-          { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/house_models" },
-          { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/modified_houses" },
+          { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/admin/houses" },
+          { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/admin/house_models" },
+          { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/admin/modified_houses" },
           { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/utilities'},
-          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/agencies" },
-          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/import" }
+          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admin/agencies" },
+          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import" },
         ],
         items2: [
-          { picture: 28, text: 'Joseph' },
-          { picture: 38, text: 'Apple' },
-          { picture: 48, text: 'Xbox Ahoy' },
-          { picture: 58, text: 'Nokia' },
-          { picture: 78, text: 'MKBHD' },
+          { picture: 28, text: 'Brian Nang' },
+          { picture: 38, text: 'Panha Leng' },
+          { picture: 48, text: 'Khemrith' },
+          { picture: 58, text: 'Emma' },
+          { picture: 78, text: 'Pisey' },
         ]
       }
     },

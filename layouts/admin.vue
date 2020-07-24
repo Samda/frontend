@@ -1,16 +1,17 @@
 <template lang="pug">
   v-main
     v-app(id="inspire")
-      Navbar(v-if="$auth.loggedIn")
-      Nuxt
+      NavbarAdmin(v-if="$auth.loggedIn")
+      nuxt
 </template>
 
 <script>
-import Navbar from '@/components/admin/Navbar'
+import NavbarAdmin from '@/components/admin/NavbarAdmin'
 
 export default {
+  name: "admin",
   components: {
-    Navbar
+    NavbarAdmin
   },
   beforeCreate() {
     let auth = JSON.parse(localStorage.getItem('auth_user'))
@@ -20,7 +21,7 @@ export default {
       this.$axios.defaults.headers.common['Authorization'] = auth.auth_token
     }
     else {
-      this.$router.push('/login')
+      this.$router.push('/admin-login')
     }
   }
 }

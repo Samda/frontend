@@ -1,11 +1,11 @@
 <template lang="pug">
   v-container(fluid)
     v-row(dense)
-      v-col(cols="12" md="6" class="pa-0")
+      v-col(cols="12" md="6" class="pa-0" sm="6")
         v-row(dense)
           v-col( v-for="(item, i) in items" :key="i" cols="12" md="6")
             cardVerticle(:item="item")
-      v-col( cols="12" md="6" class="pl-4")
+      v-col( cols="12" sm="6" md="6" class="pl-4")
         v-card
           v-spacer
           v-card-title.headline តារាងនៃការលក់ប្រចាំខ
@@ -29,6 +29,7 @@ import cardVerticle from '@/components/admin/cardVerticle'
 import annualSale from '@/components/admin/annualSale'
 
 export default {
+  name: "admin",
   layout: "admin",
   components: {
     cardIcon,
@@ -75,7 +76,7 @@ export default {
         link: '/team_sales'
       },
       {
-        icon: 'mdi-account-tie',
+        icon: 'mdi-briefcase-account-outline',
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'Management',

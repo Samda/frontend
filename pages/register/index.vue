@@ -61,6 +61,7 @@
   })
 
   export default {
+    layout: "admin",
     components: {
       ValidationProvider,
       ValidationObserver,

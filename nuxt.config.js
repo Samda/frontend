@@ -27,6 +27,7 @@ export default {
     title: 'KH LAND Co.,ltd.',
     meta: [
       { charset: 'utf-8' },
+      {"http-equiv"": "X-UA-Compatible", content: "IE=edge"},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
@@ -60,6 +61,14 @@ export default {
   */
   buildModules: [
     // '@nuxtjs/vuetify'
+    // [
+    //   '@nuxtjs/router',
+    //   {
+    //     path: 'router',
+    //     fileName: 'index.js',
+    //     keepDefaultRouter: true,
+    //   },
+    // ]
   ],
   /*
   ** Nuxt.js modules
