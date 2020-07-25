@@ -20,7 +20,7 @@
         div(class="text-center")
           span Rating
           v-rating(
-            v-model="comment_attr.rating"
+            v-model="feedback.rating"
             color="yellow darken-3"
             background-color="grey darken-1"
             empty-icon="$ratingFull"
@@ -30,21 +30,48 @@
           v-btn(icon)
             v-icon mdi-dots-vertical
         v-card-text
-          form
+          v-form(ref="feedback_form")
+
             v-text-field(
               color="brown darken-1"
-              v-model="comment_attr.title"
+              v-model="feedback.title"
               label="Title"
               required)
             v-textarea(
               rows="3"
               color="brown darken-1"
-              v-model="comment_attr.comments"
+              v-model="feedback.comment"
               label="Comment"
               required)
+            v-file-input(
+              v-model="feedback.picture"
+              color="brown darken-1"
+              counter
+              label="Picture"
+              multiple
+              placeholder="Select file"
+              prepend-icon="mdi-paperclip"
+              outlined
+              :show-size="1000")
+              template(v-slot:selection="{ index, text }")
+                v-chip(
+                  v-if="index < 2"
+                  color="brown darken-1"
+                  dark
+                  label
+                  small) {{ text }}
+                span(
+                  v-else-if="index === 2"
+                  class="overline grey--text text--darken-3 mx-2") +{{ feedback.picture.length - 2 }} File(s)
         v-card-actions
+          v-progress-circular(
+            v-if="isLoading"
+            :width="1"
+            color="brown darken-1"
+            indeterminate)
           v-spacer
-          v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit(comment_attr)") submit
+          v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit") submit
+
           v-btn(outlined color="brown darken-1" @click="comment_dialog = false") close
 </template>
 
@@ -53,18 +80,32 @@ export default {
   data() {
     return {
       comment_dialog: false,
-      comment_attr: {
+      feedback: {
         title: "",
-        comments: "",
-        images: "",
-        rating: 4.5,
+        comment: "",
+        picture: [],
+        rate: 4.5,
       }
     }
   },
 
   methods: {
-    formSubmit(formData){
-      console.log(formData)
+    async formSubmit(){
+      const formData = new FormData()
+
+      formData.append('feedback[title]', this.feedback.title)
+      formData.append('feedback[rate]', this.feedback.rate)
+      formData.append('feedback[comment]', this.feedback.comment)
+      formData.append('feedback[picture]', this.feedback.picture[0])
+
+      const result = await this.$store.dispatch('addFeedback',formData)
+      this.comment_dialog = this.$store.getters.getisLoading
+    }
+  },
+
+  computed: {
+    isLoading(){
+      return this.$store.getters.getisLoading
     }
   }
 }

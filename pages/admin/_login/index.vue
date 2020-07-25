@@ -34,7 +34,7 @@ export default {
         this.$auth.$storage.removeUniversal('redirect')
         return;
       }
-      this.$router.replace('/')
+      this.$router.replace('/admin')
       return
     }
   }

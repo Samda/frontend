@@ -71,17 +71,18 @@
       return {
         drawer: false,
         user_menu_items: [
-          { icon: 'mdi-user', text: 'Profile', route: "/admin/profile" },
-          { icon: 'mdi-user', text: 'update', route: "/admin/update" },
-          { icon: 'mdi-logout', text: 'Logout', route: "/admin/auth/logout" }
+          { icon: 'mdi-user', text: 'Profile', route: "/admin/users/profile" },
+          { icon: 'mdi-user', text: 'update', route: "/admin/users/update" },
+          { icon: 'mdi-logout', text: 'Logout', route: "" }
         ],
         items: [
           { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/admin/houses" },
           { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/admin/house_models" },
           { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/admin/modified_houses" },
-          { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/utilities'},
+          { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admin/utilities'},
           { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admin/agencies" },
-          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import" },
+          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/user-import" },
+          { icon: 'mdi-cloud-upload', text: 'ជំនួយក្នុងការប្រើប្រាស់ system', route: "/admin/support" },
         ],
         items2: [
           { picture: 28, text: 'Brian Nang' },
