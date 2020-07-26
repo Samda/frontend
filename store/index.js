@@ -1,7 +1,3 @@
-export const state = () => ({
-  isLoading: false
-})
-
 export const mutations = {
   setAuth(state, data){
     let auth_user = JSON.stringify(data.results)
@@ -9,8 +5,8 @@ export const mutations = {
     this.$auth.setUserToken(data.results.auth_token)
     this.$auth.setUser(data.results.user)
   },
-  setLoading(state, data){
-    state.isLoading = data
+  isLoggedIn(state, getters){
+    return state.auth.user
   }
 }
 
@@ -35,7 +31,7 @@ export const actions = {
 
   async addHouseModel({commit}, formData){
     try{
-      let response = await this.$axios.post('/house_models', formData)
+      let response = await this.$axios.post('/admins/contents/house_models', formData)
       return res;
     } catch (error) {
       let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
@@ -44,41 +40,12 @@ export const actions = {
   },
 
   async addHouse({}, data) {
-    let res = await this.$axios.post('/houses', data)
+    let res = await this.$axios.post('/admins/contents/houses', data)
     return res;
   },
 
   async getHouses() {
-    let res = await this.$axios.get('/houses')
+    let res = await this.$axios.get('/admins/contents/houses')
     return res;
-  },
-
-  addFeedback({commit}, data){
-    commit('setLoading', true)
-    let res = this.$axios.post('/feedbacks', data)
-                .then( response => {
-                  console.log(response.status)
-                  commit('setLoading', false)
-                }).catch( error => {
-                  commit('setLoading', false)
-                  console.log(error)
-                })
-    console.log(res)
-  }
-}
-
-export const getters = {
-  getisLoading(state){
-      return state.isLoading
-  },
-  isLoggedIn(state, getters){
-    return state.auth.user
-  },
-
-  getLoggedIn(){
-    return this.$store.$auth.loggedIn
-  },
-  User(){
-    return this.$store.$auth.user
   }
 }

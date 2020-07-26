@@ -1,13 +1,20 @@
 <template lang="pug">
-  hooper(:settings="hooperSettings")
-    Slide
-      v-container
-        v-row(align="center" justify="center")
-          v-col(cols="12")
-            h1() Slide 1
-            p Hello
-    Slide
-      h1 Slide 2
+  Hooper(:settings="hooperSettings" class="mt-1" )
+      Slide
+        div( class="images img1")
+          h2 Slider 1
+      Slide
+        div( class="images img2")
+          h2 Slider 2
+      Slide
+        div( class="images img3")
+          h2 Slider 3
+      Slide
+        div( class="images img4")
+          h2 Slider 4
+      Slide
+        div( class="images img5")
+          h2 Slider 5
 </template>
 
 <script>
@@ -27,6 +34,12 @@ export default {
         },
         {
           number: 2
+        },
+        {
+          number: 3
+        },
+        {
+          number: 4
         }
       ],
       hooper_v: {
@@ -42,6 +55,7 @@ export default {
         hoverPause: true
       },
       hooperSettings: {
+        centerMode: true,
         itemsToShow: 1,
         itemsToSlide: 1,
         playSpeed: 2000,
@@ -50,7 +64,24 @@ export default {
         autoPlay: false,
         transition: 1500,
         playSpeed: 4000,
-        hoverPause: true
+        hoverPause: true,
+        breakpoints: {
+          2400: {
+              itemsToShow: 5
+          },
+          1800: {
+              itemsToShow: 4
+          },
+          1500: {
+              itemsToShow: 3
+          },
+          1100: {
+              itemsToShow: 2.5
+          },
+          0: {
+              itemsToShow: 1.5
+          }
+        }
       }
     }
   },
@@ -63,6 +94,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 section.hooper {
   outline: none;
   // box-shadow: -1px 13px 29px 0px rgba(50, 53, 48, 0.34);

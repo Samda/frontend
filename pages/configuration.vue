@@ -1,9 +1,8 @@
 <template lang="pug">
-v-layout(row justify-center)
+v-layout(justify-center)
   v-app-bar(
     app
     class="d-none d-sm-block")
-
     v-toolbar-title
       a(href="/")
         v-img(
@@ -12,19 +11,23 @@ v-layout(row justify-center)
           contain
           src="https://www.khland.com.kh/assets/images/kh_lg.png")
     v-toolbar-items(class="ml-16")
-     v-btn(
+      v-btn(
+      class="navbar-items"
+      to="/"
+      text) Home
+      v-btn(
        class="navbar-items"
        to="/configuration"
        text) Config you house now
     v-spacer
     v-toolbar-items(class="ml-16")
-     v-btn(
-       class="navbar-items"
-       v-for="item in nav"
-       :key="item.icon"
-       text
-       :title="item.title"
-       :to="item.link") {{ item.text }}
+      v-btn(
+        class="navbar-items"
+        v-for="item in links"
+        :key="item.icon"
+        text
+        :title="item.title"
+        :to="item.link") {{ item.text }}
   v-app-bar(app class="d-block d-sm-none")
     v-toolbar-title
       a(href="/")
@@ -55,7 +58,7 @@ v-layout(row justify-center)
       v-list(flat)
         v-list-item-group
           v-list-item(
-            v-for="(item, index) in nav"
+            v-for="(item, index) in links"
             :key="index"
             to="#" class="text-transform-uppercase")
             v-list-item-icon
@@ -66,10 +69,11 @@ v-layout(row justify-center)
 
 <script>
 export default {
+  layout: 'configuration',
   data(){
     return {
       dialog: false,
-      nav: [
+      links: [
         {
           icon: 'mdi-home',
           text: 'Home',
@@ -111,9 +115,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-a.navbar-items:hover, a.v-btn--active:hover {
-  border-bottom: 2px solid #4e342e;
-  color: #4e342e;
-}
+<style lang="css" scoped>
 </style>

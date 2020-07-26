@@ -1,5 +1,7 @@
-<template lang="html">
-  <Nuxt />
+<template lang="pug">
+  v-main
+    v-app(id="inspire")
+      Nuxt
 </template>
 
 <script>

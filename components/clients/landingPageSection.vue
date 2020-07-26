@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  carouselHeader
+  //-carouselHeader
   v-container
     v-row(justify="space-around" align="center" height="500px")
       v-col(cols="12" md="6" class="pa-15")
@@ -18,18 +18,7 @@ div
         div
           h1(class="text-h5 text-center text-uppercase brown--text text--darken-4") Start building your dream house with us today !
           p(class="body-1 text-center brown--text text--darken-4") We provide you tools and ability to select all appliances, decoration equipments and housing utilities.
-  v-parallax(
-      height="400"
-      dark
-      src="https://customisedhomes.com/sites/all/themes/customisedhomes/images/Interior_banner.jpg")
-    v-row(
-        align="end"
-        justify="center")
-      v-col(class="text-center" cols="12")
-        .parallax-text(style="opacity: 1")
-          h1(class="display-1 font-weight-regular mb-4 black--text text--darken-4") Choose you favorite equipments
-          h4(class="subheading black--text text--darken-4") We provide you the tools and abilities to select all appliances, decoration equipments and housing utilities.
-  v-container
+    v-divider
     v-row(justify="space-around" align="center" height="500px")
       v-col(cols="12" md="6")
         div
@@ -39,8 +28,10 @@ div
       v-col(cols="12" md="6" class="pa-10")
         v-img(src="https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%204.jpg")
 </template>
+
 <script>
 import carouselHeader from "@/components/clients/carouselHeader"
+import parallax from "vue-parallaxy"
 export default {
   components: {
     carouselHeader
@@ -49,6 +40,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.parallax-text {
+.parallax-container {
+  position: relative;
+}
+.parallax-title {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
 }
 </style>

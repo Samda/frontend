@@ -1,60 +1,26 @@
-<template lang="html">
-  <v-app id="inspire">
-    <v-container
-      fluid
-      class="fill-height"
-    >
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <v-row
-      align="center"
-      justify="center"
-      >
-      <v-col
-          cols="12"
-          sm="8"
-          md="4"
-        >
-        <v-card
-          class="mx-auto"
-          color="brown daren-1"
-          dark
-          max-width="800"
-        >
-          <v-img
-            height="250"
-            gradient="to bottom, rgba(0,0,0, .4), rgba(0,0,0,1)"
-            src="https://library.kissclipart.com/20181214/igq/kissclipart-twibbon-sumpah-pemuda-clipart-crane-construction-c-d57ab034d4a8fd44.jpg"
-            >
-
-            <div class="d-flex flex-no-wrap justify-space-between mt-5">
-              <div>
-                <v-card-title
-                  class="headline"
-                >
-                SORRY SOMETHING WENT WRONG HERE
-                Please contact your Technical support !
-                <nuxt-link to="/" class="inline text-decoration-underline" >back to home page</nuxt-link>
-
-              </v-card-title>
-              </div>
-
-              <v-card-title>
-                <v-spacer></v-spacer>
-                <v-icon
-                  size="100"
-                >
-                  mdi-alert-circle-outline
-                </v-icon>
-                <v-spacer></v-spacer>
-              </v-card-title>
-            </div>
-          </v-img>
-        </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-app>
+<template lang="pug">
+v-container(fluid)
+  v-row(align="center" justify="center" style="height: 100vh")
+    v-col(cols="12")
+      v-list-item.text-center
+        v-list-item-content(v-if="error.statusCode === 404")
+          v-list-item-title
+            div
+              h1.text-h1.mb-1.text-uppercase 404
+              h1.headline Page not found
+          v-list-item-subtitle
+            p.mb-5 Sorry we can't find the page you want to acces to.
+          v-list-item-subtitle
+            v-btn(outlined large to="/" class="text-uppercase" color="brown text-darken-1") Bring me back
+        v-list-item-content(v-else)
+          v-list-item-title
+            div
+              h1.text-h1.mb-1(class="text-uppercase") 500
+              h1.headline.text-uppercase An error occurred
+          v-list-item-subtitle
+            p.mb-5 Oop! look like something went wrong, please contact your support.
+          v-list-item-subtitle
+            v-btn(outlined large to="/admin" class="text-uppercase" color="brown text-darken-1") Back to main page
 </template>
 
 <script>
@@ -63,6 +29,5 @@ export default {
   props: ['error'],
 }
 </script>
-
 <style lang="css" scoped>
 </style>

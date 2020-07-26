@@ -3,15 +3,18 @@
     v-app(id="inspire")
       NavbarAdmin(v-if="$auth.loggedIn")
       nuxt
+      footerAdmin
 </template>
 
 <script>
 import NavbarAdmin from '@/components/admin/NavbarAdmin'
+import footerAdmin from '@/components/admin/footerAdmin'
 
 export default {
   name: "admin",
   components: {
-    NavbarAdmin
+    NavbarAdmin,
+    footerAdmin
   },
   beforeCreate() {
     let auth = JSON.parse(localStorage.getItem('auth_user'))
@@ -21,7 +24,7 @@ export default {
       this.$axios.defaults.headers.common['Authorization'] = auth.auth_token
     }
     else {
-      this.$router.push('/admin-login')
+      this.$router.push('/admins/contents/login')
     }
   }
 }
@@ -52,34 +55,5 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
 }
 </style>

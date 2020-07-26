@@ -131,8 +131,8 @@ export default {
       },
     },
     redirect: {
-      login: '/login',
-      logout: '/',
+      login: '/admins/contents/login',
+      logout: '/admin',
       // callback: '/login',
       home: '/'
     },

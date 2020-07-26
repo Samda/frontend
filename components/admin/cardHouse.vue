@@ -43,6 +43,10 @@ export default {
       show: false
       ,
       cards: [
+        { title: 'បុរី ផ្ទះល្វែង', src: 'https://www.bvmpp.com/wp-content/uploads/2018/01/Exterior-2.15m-x-1.60m-Flat.jpg', flex: 3 },
+        { title: 'បុរី វីឡាភ្លោះ', src: 'https://photosrp.dotproperty-kh.com/2.0-KH-1547340-PP-4961753-14006974105ea2741e60949-1-490-325-ct/8-bedroom-house-for-sale-in-mean-chey-phnom-penh.jpg', flex: 3 },
+        { title: 'ផ្ទះល្វែង ពីរជាន់', src: 'https://images.realestate.com.kh/listings/32_flat_b-c_uLNEgxU.jpg', flex: 3 },
+        { title: 'ផ្ទះល្វែង បីជាន់', src: 'https://images.adsttc.com/media/images/5ec5/4ab4/b357/657a/0500/033a/large_jpg/0FI_a-1.jpg?1589988009', flex: 3 },
         { title: 'ផ្ទះខ្មែរបុរាណ សម័យអង្គ', src: 'https://www.shoreexcursions.asia/wp-content/uploads/2015/03/traditional-house-in-Cambodia.jpg', flex: 3 },
         { title: 'ផ្ទះខ្មែរបុរាណ សម័យលង្វែក', src: 'https://i.pinimg.com/originals/0e/d4/42/0ed44290ce0d7214da1db7b62bd5fdd0.jpg', flex: 3 },
         { title: 'ផ្ទះខ្មែរបុរាណ សម័យចេនឡា', src: 'https://i.pinimg.com/originals/2c/a9/d1/2ca9d171278ab23c3218a764a39a3934.jpg', flex: 3 },

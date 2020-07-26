@@ -5,7 +5,7 @@ export default function ({
 }) {
   $axios.onError(error => {
     if (error.response && error.response.status === 500) {
-      redirect('/login')
+      redirect('/error')
     }
   })
   $axios.interceptors.response.use(

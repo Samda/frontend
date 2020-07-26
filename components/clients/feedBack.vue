@@ -16,22 +16,26 @@
       max-width="500px")
       v-card
         v-card-title(class="text-center")
-          span Thanks for you feedback
-        div(class="text-center")
-          span Rating
-          v-rating(
-            v-model="feedback.rating"
-            color="yellow darken-3"
-            background-color="grey darken-1"
-            empty-icon="$ratingFull"
-            half-increments
-            hover)
-        v-menu(bottom left)
-          v-btn(icon)
-            v-icon mdi-dots-vertical
+          p Give us a feedback
+          v-spacer
+          v-btn(text icon small color="brown darken-1" @click="comment_dialog = false")
+            v-icon mdi-close
+        v-card-subtitle
+          div This will help us serve you better.
         v-card-text
           v-form(ref="feedback_form")
-
+            div(class="text-left")
+              span Rating
+              v-rating(
+                v-model="feedback.rating"
+                color="yellow darken-3"
+                background-color="grey darken-1"
+                empty-icon="$ratingFull"
+                half-increments
+                hover)
+            v-menu(bottom left)
+              v-btn(icon)
+                v-icon mdi-dots-vertical
             v-text-field(
               color="brown darken-1"
               v-model="feedback.title"
@@ -41,7 +45,7 @@
               rows="3"
               color="brown darken-1"
               v-model="feedback.comment"
-              label="Comment"
+              label="Feedback"
               required)
             v-file-input(
               v-model="feedback.picture"
@@ -62,7 +66,7 @@
                   small) {{ text }}
                 span(
                   v-else-if="index === 2"
-                  class="overline grey--text text--darken-3 mx-2") +{{ feedback.picture.length - 2 }} File(s)
+                  class="overline grey--text text--darken-3 mx-2") + {{ feedback.picture.length - 2 }} File(s)
         v-card-actions
           v-progress-circular(
             v-if="isLoading"
@@ -71,7 +75,6 @@
             indeterminate)
           v-spacer
           v-btn(outlined color="brown darken-1" class="mr-4" @click="formSubmit") submit
-
           v-btn(outlined color="brown darken-1" @click="comment_dialog = false") close
 </template>
 
@@ -98,11 +101,10 @@ export default {
       formData.append('feedback[comment]', this.feedback.comment)
       formData.append('feedback[picture]', this.feedback.picture[0])
 
-      const result = await this.$store.dispatch('addFeedback',formData)
-      this.comment_dialog = this.$store.getters.getisLoading
+      const result = await this.$store.dispatch('feedback/addFeedback', formData)
+      this.comment_dialog = this.$store.getters['feedback/isLoading']
     }
   },
-
   computed: {
     isLoading(){
       return this.$store.getters.getisLoading

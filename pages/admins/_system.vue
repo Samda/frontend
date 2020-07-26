@@ -1,9 +1,10 @@
 <template lang="pug">
-  h1 Admin Support
+  h1 System Support
 </template>
 
 <script>
 export default {
+  layout: 'admin'
 }
 </script>
 

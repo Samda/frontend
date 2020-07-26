@@ -15,6 +15,7 @@
                 :key="icon"
                 class="mx-4 blue-grey--text text--darken-4"
                 icon
+                small
                 fab
                 outlined)
                 v-icon(size="24px") {{ icon }}
