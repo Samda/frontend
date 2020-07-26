@@ -132,7 +132,7 @@ export default {
     },
     redirect: {
       login: '/admins/contents/login',
-      logout: '/admin',
+      logout: '/admins/contents/login',
       // callback: '/login',
       home: '/'
     },
