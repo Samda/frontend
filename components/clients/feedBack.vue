@@ -27,7 +27,7 @@
             div(class="text-left")
               span Rating
               v-rating(
-                v-model="feedback.rating"
+                v-model="feedback.rate"
                 color="yellow darken-3"
                 background-color="grey darken-1"
                 empty-icon="$ratingFull"
@@ -82,7 +82,7 @@
 export default {
   data() {
     return {
-      comment_dialog: false,
+      comment_dialog: '',
       feedback: {
         title: "",
         comment: "",
@@ -99,15 +99,17 @@ export default {
       formData.append('feedback[title]', this.feedback.title)
       formData.append('feedback[rate]', this.feedback.rate)
       formData.append('feedback[comment]', this.feedback.comment)
-      formData.append('feedback[picture]', this.feedback.picture[0])
-
+      if(this.feedback.picture[0] !== undefined){
+        formData.append('feedback[picture]', this.feedback.picture[0])
+      }
       const result = await this.$store.dispatch('feedback/addFeedback', formData)
-      this.comment_dialog = this.$store.getters['feedback/isLoading']
+      this.feedback = {title: '', comment: '', rate: 1, picture: [] }
+      this.comment_dialog = false
     }
   },
   computed: {
     isLoading(){
-      return this.$store.getters.getisLoading
+      return this.$store.getters['feedback/isLoading']
     }
   }
 }

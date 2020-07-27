@@ -8,12 +8,14 @@ v-container
             v-list-item
               v-list-item-content
                 v-list-item-title
-                  h1.headline.mb-1 Reviews from the customers
+                  h1.headline.mb-1
+                    | {{current_page}}
+                    | Reviews from the customers
                 v-list-item-subtitle
                   p.mb-5 Best way to improve the system is tracking how user feel with it.
     v-col(cols="12" md="7" ms="8")
       v-text-field(
-          :append-icon="search?'mdi-close':'mdi-search'"
+          :append-icon="search ? 'mdi-close' : 'mdi-magnify' "
           :append-icon-cb="() => (search = '')"
           @keydown.native.escape="search=''"
           label="Search"
@@ -26,7 +28,7 @@ v-container
             v-subheader
             v-expansion-panels(popout)
               v-expansion-panel(
-                v-for="(f, i) in feedbacks"
+                v-for="(f, i) in searchFeedback"
                 :key="i"
                 hide-actions)
                 v-expansion-panel-header
@@ -66,19 +68,24 @@ v-container
                 v-col(cols="8")
                   v-container(class="max-width")
                     v-pagination(
-                      v-model="page"
-                      value="page"
+                      color="brown text-darken-1"
+                      total-visible="10"
+                      v-model="current_page"
+                      value="current_page"
                       class="my-4"
-                      :length="12")
+                      :length="links.total_page")
 </template>
-
 <script>
+
+import { mapState, mapGetters } from 'vuex';
+
 export default {
+
   layout: "admin",
+
   data() {
     return {
       search: '',
-      page: 1,
       feedback: [
         {
           title: 'Very long title',
@@ -93,25 +100,32 @@ export default {
   },
 
   computed: {
-    pages () {
-        return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
+    current_page: {
+      get(){
+        return this.$store.getters["feedback/getCurrentPage"]
+      },
+      set(val){
+        this.fetch_feedbacks(val)
+      }
+    },
+    searchFeedback(){
+      return this.$store.getters["feedback/GET_FEEDBACKS"].filter( f => {
+        return f.attributes.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    },
+    ...mapState("feedback", ["feedbacks", "links"]),
+    ...mapGetters(["feedback/GET_FEEDBACKS"]),
+  },
+
+  methods: {
+    fetch_feedbacks(param){
+      this.$store.dispatch("feedback/FETCH_FEEDBACKS", `page=${param}`)
     }
   },
 
-  watch: {
-    page: (data, old_data) => {
-      console.log(data)
-    }
-  },
-
-  async asyncData({ $axios, commit }) {
-    let { data } = await $axios.get("/feedbacks")
-    return {
-      feedbacks: data.data,
-      per_page: data.data.per_page
-    };
+  created() {
+    this.$store.dispatch("feedback/FETCH_FEEDBACKS", `page=1`)
   }
-
 
 }
 </script>

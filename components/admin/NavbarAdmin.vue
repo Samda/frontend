@@ -6,6 +6,7 @@
       temporary)
       v-container(class="mb-n10")
         div(class="text-center")
+         nuxt-link(to="/admin")
           v-avatar(
             size="80"
             tile)
@@ -82,8 +83,8 @@
           { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admins/contents/utilities'},
           { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admins/contents/agencies" },
           { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admins/contents/user-import" },
-          { icon: 'mdi-cloud-upload', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admins/contents/support" },
-          { icon: 'mdi-cloud-upload', text: 'មតិអតិថិជន', route: "/admins/contents/feedback" }
+          { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admins/contents/support" },
+          { icon: 'mdi-comment-account-outline', text: 'មតិអតិថិជន', route: "/admins/contents/feedback" }
         ],
         items2: [
           { picture: 28, text: 'Brian Nang' },
