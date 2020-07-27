@@ -3,7 +3,6 @@ v-layout(row justify-center)
   v-app-bar(
     app
     class="d-none d-sm-block")
-
     v-toolbar-title
       a(href="/")
         v-img(
@@ -57,7 +56,8 @@ v-layout(row justify-center)
           v-list-item(
             v-for="(item, index) in nav"
             :key="index"
-            to="#" class="text-transform-uppercase")
+            class="text-transform-uppercase"
+            @click="toRoute(item.link)")
             v-list-item-icon
               v-icon(v-text="item.icon")
             v-list-item-content
@@ -106,6 +106,13 @@ export default {
           link: 'login'
         }
       ]
+    }
+  },
+
+  methods: {
+    toRoute(link){
+      this.$router.push(link)
+      this.dialog = false
     }
   }
 }
