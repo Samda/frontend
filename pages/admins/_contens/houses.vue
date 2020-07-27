@@ -1,6 +1,8 @@
-<template>
-  <v-container fluid>
-    <cardHouse />
+<template lang="pug">
+  <v-container>
+    v-row
+      v-column
+    cardHouse
   </v-container>
 </template>
 <script>

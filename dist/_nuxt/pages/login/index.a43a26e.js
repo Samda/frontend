@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{478:function(e,n,t){"use strict";t.r(n);var c={},l=t(24),component=Object(l.a)(c,(function(){var e=this.$createElement;return(this._self._c||e)("h1",[this._v("login from client side")])}),[],!1,null,"680acd5a",null);n.default=component.exports}}]);
