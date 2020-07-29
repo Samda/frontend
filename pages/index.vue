@@ -4,18 +4,17 @@ div
 </template>
 
 <script>
-import landingPageSection from "@/components/clients/landingPageSection"
+import landingPageSection from "@/components/clients/landingPageSection";
 
 export default {
   layout: "default",
   components: {
-    landingPageSection
-  }
-}
+    landingPageSection,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 // .v-application ul, .v-application ol {
 //   padding-left: 0px;
 // }
@@ -25,7 +24,9 @@ export default {
 //   padding: 0;
 // }
 
-section.hooper, section.hooper:active, section.hooper:focus {
+section.hooper,
+section.hooper:active,
+section.hooper:focus {
   outline: none;
 }
 </style>
