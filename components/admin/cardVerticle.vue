@@ -3,7 +3,8 @@
     div(class="d-flex flex-no-wrap justify-space-between")
       div
         v-card-title( class="headline" v-text="item.title")
-        v-card-subtitle {{item.total}} {{item.unit}}
+        v-card-text
+          .mt-2 {{item.total}} {{item.unit}}
         v-card-actions
           v-btn( :color="item.color" small :to="item.link") បើកចូល
       v-card-title

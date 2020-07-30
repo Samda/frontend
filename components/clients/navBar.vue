@@ -14,7 +14,7 @@ v-layout(row justify-center)
      v-btn(
        class="navbar-items"
        to="/configuration"
-       text) Config you house now
+       text) Config a home now
     v-spacer
     v-toolbar-items(class="ml-16")
      v-btn(
@@ -73,35 +73,30 @@ export default {
         {
           icon: 'mdi-home',
           text: 'Home',
-          title: 'Back to Home page',
           active: true,
           link: '/'
         },
         {
           icon: 'mdi-information-outline',
           text: 'About',
-          title: 'About this demo',
           active: false,
           link: '/about'
         },
         {
           icon: 'mdi-lifebuoy',
           text: 'SUPPORT',
-          title: 'Some stuff that needs doing',
           active: false,
           link: 'support'
         },
         {
           icon: 'mdi-email',
           text: 'Contact',
-          title: 'Our Contact info',
           active: false,
           link: 'contact'
         },
         {
           icon: 'mdi-login',
           text: 'login',
-          title: 'Our Contact info',
           active: false,
           link: 'login'
         }
