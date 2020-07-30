@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+v-app
   landingPageSection
 </template>
 

@@ -38,21 +38,23 @@
             v-list-item-action
               v-icon(color="grey darken-1") mdi-logout
             v-list-item-title(class="grey--text text--darken-1") Logout
-    v-app-bar( app clipped-left color="teal darken-1" dense)
-      v-app-bar-nav-icon(@click="drawer = true")
+    v-app-bar( app clipped-left color="brown darken-1" dense)
+      v-app-bar-nav-icon.grey--text.text--darken-4(@click="drawer = true")
       //- <v-list-item-avatar tile>
           <v-img src="https://www.khland.com.kh/assets/images/kh_lg.png"></v-img>
       v-toolbar-title(class="mr-12 align-center")
         span.title
-          nuxt-link(class="black--text" to="/admin") KH LAND
+          nuxt-link.grey--text.text--darken-4( to="/admin") KH LAND
         v-spacer
         //- <span>{{ getLoggedIn }}</span> -->
-      v-spacer
       v-menu( bottom origin="center center" transition="slide-x-transition")
-        template(v-slot:activator="{ on, attrs }")
-          v-btn( v-bind="attrs" v-on="on" class="ma-8" small text)
-            | {{auth.user.name}}
-            v-icon(right dark) mdi-account
+        v-btn.grey--text.text--darken-4(
+          icon
+          tile
+          large
+          color="teal")
+          v-icon mdi-account
+          //-| {{auth.user.name}}
         v-list
           v-list-item(@click="")
             v-list-item-title Profile

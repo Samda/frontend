@@ -37,15 +37,5 @@ export const actions = {
       let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
       console.log(err)
     }
-  },
-
-  async addHouse({}, data) {
-    let res = await this.$axios.post('/admins/contents/houses', data)
-    return res;
-  },
-
-  async getHouses() {
-    let res = await this.$axios.get('/admins/contents/houses')
-    return res;
   }
 }

@@ -48,6 +48,8 @@ v-layout(row, justify-center)
               contain,
               src="https://www.khland.com.kh/assets/images/kh_lg.png"
             )
+        v-toolbar-items.ml-16
+          v-btn.navbar-items(to="/configuration", text) Config you house now
         v-spacer
         v-btn(icon, @click="dialog = false")
           v-icon mdi-close
