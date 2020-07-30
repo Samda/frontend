@@ -65,11 +65,16 @@ v-layout(justify-center)
               v-icon(v-text="item.icon")
             v-list-item-content
               v-list-item-title(v-text="item.text" :to="item.link")
+  Configure
 </template>
 
 <script>
+import Configure from "@/components/clients/configure"
 export default {
   layout: 'configuration',
+  components: {
+    Configure,
+  },
   data(){
     return {
       dialog: false,

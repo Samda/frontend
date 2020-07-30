@@ -43,7 +43,7 @@ export default {
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ផ្ទះអតិថិជនរៀប',
-        total: '120',
+        total: '២៣',
         unit: 'ខ្នង',
         link: 'configured_houses'
       },
@@ -52,7 +52,7 @@ export default {
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
         title: 'ម៉ូតសំរាប់ផ្ទះគំរូ',
-        total: '១០០',
+        total: '៤០',
         unit: 'ម៉ូត',
         link: 'house_models'
       },
@@ -61,7 +61,7 @@ export default {
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ភ្នាក់ងារលក់',
-        total: '៧៧៧',
+        total: '៩៩',
         unit: 'នាក់',
         link: 'agencies'
       },
@@ -70,7 +70,7 @@ export default {
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'ភ្នាក់ងារទីផ្សារ',
-        total: '២០០',
+        total: '៨៩',
         unit: 'នាក់',
         link: '/team_sales'
       },

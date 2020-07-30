@@ -24,6 +24,7 @@
     "vee-validate": "^3.3.7",
     "vue-apexcharts": "^1.5.3",
     "vue-loader": "^15.9.3",
+    "vue-picture-input": "^2.1.6",
     "vuex": "^3.5.1"
   },
   "devDependencies": {

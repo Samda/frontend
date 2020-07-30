@@ -1,15 +1,12 @@
 <template lang="pug">
-  div
-    Nuxt
+  v-main
+    v-app(id="inspire")
+      nuxt
 </template>
 
 <script>
-import navBar from "@/components/clients/navBar"
-
 export default {
-  components: {
-    navBar
-  }
+  name: "configuration"
 }
 </script>
 

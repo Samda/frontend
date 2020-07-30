@@ -1,19 +1,19 @@
 <template lang="pug">
-  <v-container>
+  v-container
     v-row
-      v-column
+      v-col(cols="12")
+        span.text-h4.text-uppercase House For Modifying
+        v-spacer
+        v-btn(
+          outlined
+          large color="brown darken-1" to="/admins/contents/houses/content/new") Add new
+
     cardHouse
-  </v-container>
 </template>
 <script>
   import cardHouse from '@/components/admin/cardHouse'
   export default {
     layout: "admin",
-    data(){
-      return {
-        dialog: false
-      }
-    },
     components: {
       cardHouse
     }
