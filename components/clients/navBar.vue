@@ -1,28 +1,38 @@
 <template lang="pug">
-v-app-bar(app, elevate-on-scroll, fixed, flat)
-  v-toolbar-title
-    a(href="/")
-      v-img(
-        max-height="60",
-        max-width="60",
-        contain,
-        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-      )
-  v-toolbar-items
-    v-btn.navbar-items(to="/configuration", text) Config you house now
-  v-spacer
-  v-toolbar-items.hidden-sm-and-down
-    v-btn.navbar-items(
-      v-for="item in nav",
-      :key="item.icon",
-      text,
-      :title="item.title",
-      :to="item.link"
-    ) {{ item.text }}
-
-  v-btn.hidden-md-and-up(@click="dialog = !dialog", color="primary", icon)
-    v-app-bar-nav-icon
-  v-dialog.d-flex(
+v-layout(row, justify-center)
+  v-app-bar.d-none.d-sm-block(app)
+    v-toolbar-title
+      a(href="/")
+        v-img(
+          max-height="60",
+          max-width="60",
+          contain,
+          src="https://www.khland.com.kh/assets/images/kh_lg.png"
+        )
+    v-toolbar-items.ml-16
+      v-btn.navbar-items(to="/configuration", text) Config you house now
+    v-spacer
+    v-toolbar-items.ml-16
+      v-btn.navbar-items(
+        v-for="item in nav",
+        :key="item.icon",
+        text,
+        :title="item.title",
+        :to="item.link"
+      ) {{ item.text }}
+  v-app-bar.d-block.d-sm-none(app)
+    v-toolbar-title
+      a(href="/")
+        v-img(
+          max-height="50",
+          max-width="50",
+          contain,
+          src="https://www.khland.com.kh/assets/images/kh_lg.png"
+        )
+    v-spacer
+    v-btn(@click="dialog = true", color="primary", icon)
+      v-app-bar-nav-icon
+  v-dialog.d-flex.d-sm-none(
     v-model="dialog",
     fullscreen,
     hide-overlay,
@@ -38,7 +48,6 @@ v-app-bar(app, elevate-on-scroll, fixed, flat)
               contain,
               src="https://www.khland.com.kh/assets/images/kh_lg.png"
             )
-
         v-toolbar-items.ml-16
           v-btn.navbar-items(to="/configuration", text) Config you house now
         v-spacer
