@@ -15,7 +15,6 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.11.0",
-    "@nuxtjs/bulma": "^1.2.7",
     "apexcharts": "^3.19.3",
     "babel-loader": "^8.1.0",
     "file-loader": "^6.0.0",
@@ -27,7 +26,6 @@
     "vue-apexcharts": "^1.5.3",
     "vue-loader": "^15.9.3",
     "vue2-leaflet": "^2.5.2",
-    "vue-picture-input": "^2.1.6",
     "vuex": "^3.5.1"
   },
   "devDependencies": {

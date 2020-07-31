@@ -8,25 +8,27 @@ v-container(fluid)
       v-textarea(label="Your message", outlined)
       v-btn.py-8(block, bottom, color="teal lighten-1", large) Send your message
     v-col(cols="9")
-      div
-        l-map.min-h-screen.z-10(
-          style="min-height:70vh",
-          :zoom="zoom",
-          :center="center",
-          :options="{ zoomControl: true }"
-        )
-          l-tile-layer(:url="url")
-          div(v-for="item in items", :key="item.id") {{ item }}
-          div(v-if="state")
-            l-marker(
-              v-for="item in state.items",
-              :key="item.objectID",
-              :lat-lng="item._geoloc"
-            )
+      no-ssr
+        div
+          l-map.min-h-screen(
+            style="min-height:70vh",
+            :zoom="zoom",
+            :center="center",
+            :options="{ zoomControl: true }"
+          )
+            l-tile-layer(:url="url")
+            div(v-for="item in items", :key="item.id") {{ item }}
+            div(v-if="state")
+              l-marker(
+                v-for="item in state.items",
+                :key="item.objectID",
+                :lat-lng="item._geoloc"
+              )
 </template>
 
 <script>
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
+
 export default {
   layout: "default",
   components: {

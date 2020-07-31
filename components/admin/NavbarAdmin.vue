@@ -4,47 +4,47 @@
       v-model="drawer"
       app
       temporary)
-      v-container(class="mb-n10")
-        div(class="text-center")
+      v-container
+        div.mb-5.text-center
          nuxt-link(to="/admin")
           v-avatar(
             size="80"
             tile)
             v-img(src="https://www.khland.com.kh/assets/images/kh_lg.png")
         v-divider
-      v-list(dense)
-        v-list-item(
-          v-for="item in items"
-          :key="item.text"
-          link
-          @click="Linkto(item.route)")
-          v-list-item-action
-            v-icon {{ item.icon }}
-          v-list-item-content
-            v-list-item-title {{ item.text }}
-        v-subheader(class="mt-4 grey--text text--darken-1") Admin Users
-        v-list
+        v-list(dense)
           v-list-item(
-            v-for="item in items2"
+            v-for="item in items"
             :key="item.text"
-            link)
-            v-list-item-avatar
-              img(
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKSEuKKwqIqbJH-NRiDHluGbuC9ysMW99BPA&usqp=CAU"
-                alt="")
-            v-list-item-title(v-text="item.text")
-        v-list
-          v-list-item( link @click="Logout")
+            link
+            @click="Linkto(item.route)")
             v-list-item-action
-              v-icon(color="grey darken-1") mdi-logout
-            v-list-item-title(class="grey--text text--darken-1") Logout
+              v-icon {{ item.icon }}
+            v-list-item-content
+              v-list-item-title {{ item.text }}
+          v-subheader(class="mt-4 grey--text text--darken-1") Admin Users
+          v-list
+            v-list-item(
+              v-for="item in items2"
+              :key="item.text"
+              link)
+              v-list-item-avatar
+                img(
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKSEuKKwqIqbJH-NRiDHluGbuC9ysMW99BPA&usqp=CAU"
+                  alt="")
+              v-list-item-title(v-text="item.text")
+          v-list
+            v-list-item( link @click="Logout")
+              v-list-item-action
+                v-icon(color="grey darken-1") mdi-logout
+              v-list-item-title(class="grey--text text--darken-1") Logout
     v-app-bar( app clipped-left color="brown darken-1" dense)
       v-app-bar-nav-icon.grey--text.text--darken-4(@click="drawer = true")
       //- <v-list-item-avatar tile>
           <v-img src="https://www.khland.com.kh/assets/images/kh_lg.png"></v-img>
       v-toolbar-title(class="mr-12 align-center")
         span.title
-          nuxt-link.grey--text.text--darken-4( to="/admin") KH LAND
+          nuxt-link.grey--text.text--darken-4.text-decoration-none( to="/admin") KH LAND
         v-spacer
         //- <span>{{ getLoggedIn }}</span> -->
       v-menu( bottom origin="center center" transition="slide-x-transition")
