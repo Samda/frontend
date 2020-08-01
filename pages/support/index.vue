@@ -1,28 +1,28 @@
 <template lang="pug">
 div
-  v-content
-    v-container.grey.lighten-5.px-16(fluid)
-      v-row.px-16
-        v-col(cols="12", md="3", sm="3", align="center")
-          v-img(
+  v-main
+    v-container.grey.lighten-5(fluid fill-height)
+      v-row.px-10
+        v-col(cols="12", md="3", sm="3", align="center" )
+          v-img.mb-5(
             max-height="60",
             max-width="60",
             contain,
             src="https://www.khland.com.kh/assets/images/kh_lg.png"
           )
-          v-list
-            v-list-item-title.font-weight-medium.display-5 Help Center
-            v-list-item-group(v-model="model", color="teal")
-              v-list-item(v-for="item in fakeItems", :key="item.id")
+          v-list.grey.lighten-5
+            v-list-item-title.mb-10.font-weight-medium.display-5 Help Center
+            v-list-item-group.p-5(v-model="model", color="teal")
+              v-list-item.mb-5(v-for="item in fakeItems", :key="item.id")
                 v-list-item-content
                   v-list-item-title(v-text="item.text", color="red")
 
         v-col.pa-0(cols="12", md="9", sm="9", align="center")
           v-container(fluid)
-            v-expansion-panels
+            v-expansion-panels( flat)
               v-expansion-panel(v-for="(item, i) in 5", :key="i")
                 v-expansion-panel-header Support Title {{i+1}}
-                v-expansion-panel-content(color="green lighten-5") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                v-expansion-panel-content.pt-5(color="green lighten-5" a) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </template>
 
 <script>
@@ -34,6 +34,7 @@ export default {
         { text: "Buyer support" },
         { text: "Trust & Safety" },
       ],
+
       model: 0,
     };
   },

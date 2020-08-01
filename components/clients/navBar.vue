@@ -1,5 +1,5 @@
 <template lang="pug">
-v-layout(row, justify-center)
+v-container(fluid)
   v-app-bar.d-none.d-sm-block(app)
     v-toolbar-title
       a(href="/")
