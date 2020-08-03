@@ -130,7 +130,7 @@ export default {
 
 <style lang="scss" scoped>
   .image-container{
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 
     .thumbnail-image{
       width: 400px;

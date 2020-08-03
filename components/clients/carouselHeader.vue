@@ -1,33 +1,28 @@
 <template lang="pug">
-  Hooper(:settings="hooperSettings" class="mt-1" )
-      Slide
-        div( class="images img1")
-          h2 Slider 1
-      Slide
-        div( class="images img2")
-          h2 Slider 2
-      Slide
-        div( class="images img3")
-          h2 Slider 3
-      Slide
-        div( class="images img4")
-          h2 Slider 4
-      Slide
-        div( class="images img5")
-          h2 Slider 5
+v-carousel
+  v-carousel-item(
+    v-for="(item,i) in items"
+    :key="i"
+    :src="item.src"
+    reverse-transition="fade-transition"
+    transition="fade-transition")
 </template>
 
 <script>
-import hooperStyle from "hooper/dist/hooper.css"
-import { Hooper, Slide } from 'hooper';
-
 export default {
-  components: {
-    Hooper,
-    Slide
-  },
   data(){
     return {
+      items: [
+          {
+            src: 'https://i.ytimg.com/vi/hqezzpW_atk/maxresdefault.jpg',
+          },
+          {
+            src: 'https://www.karndean.com/-/media/images/landing-page/res/heritage/heritage_residential.ashx?la=en-gb&hash=A65F195E11677C38E8C6BAFB61A3BA725E12C8A6',
+          },
+          {
+            src: 'https://s.alicdn.com/@sc01/kf/HTB1b7WqXyDxK1Rjy1zcq6yGeXXaz.jpg',
+          }
+      ],
       sliders: [
         {
           number: 1
@@ -53,35 +48,6 @@ export default {
         playSpeed: 4000,
         wheelControl: false,
         hoverPause: true
-      },
-      hooperSettings: {
-        centerMode: true,
-        itemsToShow: 1,
-        itemsToSlide: 1,
-        playSpeed: 2000,
-        infiniteScroll: true,
-        wheelControl: false,
-        autoPlay: false,
-        transition: 1500,
-        playSpeed: 4000,
-        hoverPause: true,
-        breakpoints: {
-          2400: {
-              itemsToShow: 5
-          },
-          1800: {
-              itemsToShow: 4
-          },
-          1500: {
-              itemsToShow: 3
-          },
-          1100: {
-              itemsToShow: 2.5
-          },
-          0: {
-              itemsToShow: 1.5
-          }
-        }
       }
     }
   },

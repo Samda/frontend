@@ -1,5 +1,5 @@
 <template lang="pug">
-v-footer(class="font-weight-medium")
+v-footer(class="font-weight-medium" fixed)
   v-col(
     class="text-center"
     cols="12") <strong>KHLAND CO.,LTD.</strong> &copy; {{ new Date().getFullYear() }}

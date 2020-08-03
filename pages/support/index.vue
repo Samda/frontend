@@ -12,17 +12,18 @@ div
           )
           v-list.grey.lighten-5
             v-list-item-title.mb-10.font-weight-medium.display-5 Help Center
-            v-list-item-group.p-5(v-model="model", color="teal")
+            v-list-item-group.p-5(v-model="model", color="brown")
               v-list-item.mb-5(v-for="item in fakeItems", :key="item.id")
                 v-list-item-content
-                  v-list-item-title(v-text="item.text", color="red")
+                  v-list-item-title(v-text="item.text", color="brown darken-4")
 
         v-col.pa-0(cols="12", md="9", sm="9", align="center")
           v-container(fluid)
             v-expansion-panels( flat)
               v-expansion-panel(v-for="(item, i) in 5", :key="i")
-                v-expansion-panel-header Support Title {{i+1}}
-                v-expansion-panel-content.pt-5(color="green lighten-5" a) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                v-expansion-panel-header
+                  h1.brown--text support text {{i+1}}
+                v-expansion-panel-content.pt-5.brown--text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </template>
 
 <script>

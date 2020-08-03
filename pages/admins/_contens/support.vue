@@ -3,9 +3,9 @@
     v-row
       v-col(cols="4")
         v-container(fluid)
-          v-row(justify="center" align="end")
+          v-row(justify="center" align="start")
             v-col(cols="12")
-              div.text-container.text-center( style="height: 400px; width: 350px;position: fixed;" class="brown--text text--darken-3")
+              div.text-container.text-start( style="height: 500px; width: 300px;position: fixed;" class="brown--text text--darken-3")
                 h1.text-h5 System Management
                 blockquote.blockquote ការប្រើប្រាស់ នឹង ការគ្រប់គ្រង់ទិន្ន័យរបស់ System សំរាប់ការគ្រប់គ្រងទូទៅ នឹង គ្រប់គ្រងនឹងបញ្ចូលព័តមានរបស់សំរាប់ house configuration
                 blockquote.blockquote ការប្រើប្រាស់ នឹង ការគ្រប់គ្រង់ទិន្ន័យរបស់ System សំរាប់ Developer នឹង ការអនុញ្ញាត្តិក្នុងការប្រើប្រាស់ទិន្ន័យរបស់ house configuration

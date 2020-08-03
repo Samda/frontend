@@ -16,9 +16,9 @@ export default {
   components: {
     feedBack,
     footerMain,
-    navBar,
+    navBar
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

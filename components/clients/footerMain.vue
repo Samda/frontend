@@ -1,14 +1,14 @@
 <template lang="pug">
   v-footer(
-    color="teal darken-1"
+    color="green darken-1"
     padless)
     v-container
       v-row(align="center" justify="center")
-        v-col(cols="10" color="teal darken-1")
+        v-col(cols="10" color="green darken-1")
           v-card(
             flat
             tile
-            class="teal darken-1 white--text")
+            class="green darken-1 white--text")
             v-card-text(class="ml-n8")
               v-btn(
                 v-for="icon in icons"

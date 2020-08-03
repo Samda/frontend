@@ -1,3 +1,8 @@
+/* @preserve
+ * Leaflet 1.6.0, a JS library for interactive maps. http://leafletjs.com
+ * (c) 2010-2019 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ */
+
 /*!
 	 * The buffer module from node.js, for the browser.
 	 *
@@ -82,3 +87,11 @@ PERFORMANCE OF THIS SOFTWARE.
   * (c) 2020 Abdelrahman Awad
   * @license MIT
   */
+
+/**
+  stickybits - Stickybits is a lightweight alternative to `position: sticky` polyfills
+  @version v3.7.7
+  @link https://github.com/yowainwright/stickybits#readme
+  @author Jeff Wainwright <yowainwright@gmail.com> (https://jeffry.in)
+  @license MIT
+**/
