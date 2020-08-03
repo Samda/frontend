@@ -1,6 +1,6 @@
 <template lang="pug">
   v-main
-    v-app(id="inspire")
+    v-app(id="inspire" style="padding-bottom: 50px;")
       NavbarAdmin(v-if="$auth.loggedIn")
       nuxt
       footerAdmin

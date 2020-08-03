@@ -12,21 +12,84 @@
             height="200px")
             v-card-title(v-text="card.title")
           v-card-text
-            div.my-4.subtitle-1 $ • Italian, Cafe
+            div.my-4.subtitle-1 Sample Data for house
           v-card-actions
             v-spacer
             v-btn(
+              @click.stop="dialog = true"
               outlined
               small
               color="teal darken-1"
               class="white--text") Prev
               v-icon(right dark) mdi-camera-control
+    v-dialog.pa-15(
+      v-model="dialog"
+      max-width="800")
+      v-card(elevation="24"
+            class="mx-auto" )
+        v-carousel(
+          :continuous="false"
+          :cycle="cycle"
+          :show-arrows="false"
+          hide-delimiter-background
+          delimiter-icon="mdi-minus"
+          height="300")
+          v-carousel-item(
+            v-for="(slide, i) in slides"
+            :key="i")
+            v-sheet(
+              :color="colors[i]"
+              height="100%"
+              tile)
+              v-row(
+                class="fill-height"
+                align="center"
+                justify="center")
+                .display-3 {{slide}} House's Picture
+        v-card-content
+          v-list-item(three-line)
+            v-list-item-content
+              div(class="overline mb-4") Descript
+              v-list-item-title(class="headline mb-1") House Title
+              v-list-item-subtitle Information for about house configuration
+              v-list-item-subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              v-list-item-subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            v-list-item-avatar(
+              tile
+              size="80"
+              color="grey")
+        v-card-actions
+          v-spacer
+          v-btn(
+            color="green darken-1"
+            text
+            @click="dialog = false") Edit
+          v-btn(
+            color="green darken-1"
+            text
+            @click="dialog = false") Close
 </template>
 
 <script>
 export default {
   data () {
     return {
+      colors: [
+        'green',
+        'secondary',
+        'yellow darken-4',
+        'red lighten-2',
+        'orange darken-1',
+      ],
+      cycle: false,
+      slides: [
+        'First',
+        'Second',
+        'Third',
+        'Fourth',
+        'Fifth',
+      ],
+      dialog: false,
       show: false,
       cards: [
         {
