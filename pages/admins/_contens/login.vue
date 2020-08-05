@@ -10,13 +10,6 @@
                 height="100%"
                 src="https://www.khland.com.kh/assets/images/kh_lg.png")
     LoginForm(:submitForm="userLogin")
-    v-footer(padless absolute)
-      v-col(
-        class="text-center"
-        cols="12")
-        | {{ new Date().getFullYear() }}
-        | &copy;
-        strong KH LAND CO.,LTD.
 </template>
 
 <script>
