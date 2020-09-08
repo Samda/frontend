@@ -7,6 +7,31 @@ v-app
 import landingPageSection from '@/components/clients/landingPageSection'
 export default {
   layout: "default",
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description'
+        },
+        {
+          property: "og:url",
+          content: "https://house.khland.com.kh"
+        },
+        {
+          property: "og:title",
+          content: "KH LAND Co,. Ltd. Customize your dream house with us today."
+        },
+        {
+          property: "og:image",
+          // 1200 x 630 best display
+          content: "https://www.khland.com.kh/assets/images/kh_lg.png"
+        }
+      ]
+    }
+  },
   components: {
     landingPageSection
   }

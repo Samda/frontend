@@ -4,13 +4,6 @@
  */
 
 /*!
-	 * The buffer module from node.js, for the browser.
-	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
-	 * @license  MIT
-	 */
-
-/*!
   * vue-router v3.4.3
   * (c) 2020 Evan You
   * @license MIT
@@ -75,12 +68,6 @@ PERFORMANCE OF THIS SOFTWARE.
 /*! svg.filter.js - v2.0.2 - 2016-02-24
   * https://github.com/wout/svg.filter.js
   * Copyright (c) 2016 Wout Fierens; Licensed MIT */
-
-/**
-  * Hopper 0.3.4
-  * (c) 2019
-    * @license MIT
-    */
 
 /**
   * vee-validate v3.3.9

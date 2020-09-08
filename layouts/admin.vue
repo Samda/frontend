@@ -26,7 +26,7 @@ export default {
       this.$axios.defaults.headers.common['Authorization'] = auth_token
     }
     else {
-      this.$router.push('/admins/login')
+      this.$router.push('/admin/login')
     }
   }
 }

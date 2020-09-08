@@ -22,9 +22,8 @@ export const actions = {
 
     try {
       let response = this.$axios.post('/api/v1/auth/login', loginInfo).then((res) => {
-        debugger
         commit('setAuth', res)
-        this.$router.push('/admins')
+        this.$router.push('/admin')
       })
     } catch (error) {
       let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
@@ -34,7 +33,7 @@ export const actions = {
 
   async addHouseModel({commit}, formData){
     try{
-      let response = await this.$axios.post('/admins/contents/house_models', formData)
+      let response = await this.$axios.post('/api/v1/house_models', formData)
       return res;
     } catch (error) {
       let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"

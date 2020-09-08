@@ -29,13 +29,12 @@ export const mutations = {
   setCurrentPage(state, val){
     state.links.current_page = val
   }
-
 }
 //ACTIONS
 export const actions = {
   addFeedback({commit}, data){
     commit('setLoading', true)
-    let res = this.$axios.post('/feedbacks', data)
+    let res = this.$axios.post('/api/v1/feedbacks', data)
                 .then( response => {
                   console.log(response.status)
                   commit('setLoading', false)
@@ -47,7 +46,7 @@ export const actions = {
 
   async FETCH_FEEDBACKS({commit}, params){
     try{
-      let res = await this.$axios.get(`/feedbacks?${params}`).then(response => {
+      let res = await this.$axios.get(`/api/v1/feedbacks?${params}`).then(response => {
         commit('setFeedbacks', response.data)
         commit('setLink', response.data)
       }).catch( error => {

@@ -8,7 +8,7 @@
             class="brown--text"
             flat)
             v-spacer
-            v-toolbar-title Login
+            v-toolbar-title.text-h4.text-uppercase LOGIN
             v-spacer
           v-card-text
             v-form
@@ -32,12 +32,14 @@
                 @click:append="show1 = !show1")
           v-card-actions
             v-btn(
-              class="brown--text ml-2"
-              color="#78a152"
-              @click="submitForm(loginInfo)") Login
+              class="ml-2"
+              color="primary"
+              outlined
+              @click="submitForm(loginInfo)") Sign in
             v-btn(
-              class="brown--text mr-5"
-              color="#78a152") Sing Up sd
+              color="primary"
+              outlined
+              class="mr-5") Sing Up
             v-spacer
             span
               nuxt-link(to="/forget_password") Forget password?

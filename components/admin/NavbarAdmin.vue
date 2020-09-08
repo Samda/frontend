@@ -6,7 +6,7 @@
       temporary)
       v-container
         div.mb-5.text-center
-         nuxt-link(to="/admins")
+         nuxt-link(to="/admin")
           v-avatar(
             size="80"
             tile)
@@ -14,7 +14,6 @@
         v-divider
         v-list(dense)
           v-list-item(
-            color="brown"
             v-for="item in items"
             :key="item.text"
             link
@@ -37,30 +36,54 @@
           v-list
             v-list-item( link @click="Logout")
               v-list-item-action
-                v-icon(color="grey darken-1") mdi-logout
-              v-list-item-title(class="grey--text text--darken-1") Logout
-    v-app-bar( app clipped-left color="brown darken-1" dense)
-      v-app-bar-nav-icon.grey--text.text--darken-4(@click="drawer = true")
+                v-icon(color="#6b4912") mdi-logout
+              v-list-item-title Logout
+    v-app-bar( app clipped-left)
+      v-app-bar-nav-icon(color="#6b4912" @click="drawer = true")
       v-toolbar-title
         span.title
-          nuxt-link.grey--text.text--darken-4.text-decoration-none(to="/admins") KH LAND
+          nuxt-link.text-decoration-none(to="/admin") KH LAND
       v-spacer
-      //-button( type="button" class="ml-2 v-btn v-btn--flat v-btn--text theme--light v-size--default" role="button" aria-haspopup="true" aria-expanded="false" style="min-width: 0px;")
-        span(class="v-btn__content")
-          i(aria-hidden="true" class="v-icon notranslate mdi mdi-account theme--light")
-      v-btn(depressed small) Normal
-      v-menu(bottom origin="center center" transition="slide-x-transition")
-        v-btn.grey--text.text--darken-4(
-          icon
-          color="teal")
-          v-icon mdi-account
+      v-menu(
+        z-index="90"
+        transition="slide-y-transition"
+        small
+        bottom
+        offset-y)
+        template(v-slot:activator="{ on, attrs }")
+          v-btn(
+            v-bind="attrs"
+            v-on="on"
+            color="#6b4912"
+            tile
+            text
+            )
+            v-icon(left) mdi-account
+            | {{$auth.user.email}}
         v-list
           v-list-item(@click="")
-            v-list-item-title Profile
+            v-list-item-icon
+              v-icon mdi-account-box-outline
+            v-list-item-content
+              v-list-item-title My Profile
+          v-divider
           v-list-item(@click="")
-            v-list-item-title Update
-          v-list-item(@click="Logout")
-            v-list-item-title Logout
+            v-list-item-icon
+              v-icon mdi-account-edit
+            v-list-item-content
+              v-list-item-title Edit Profile
+          v-divider
+          v-list-item(@click="")
+            v-list-item-icon
+              v-icon mdi-cog
+            v-list-item-content
+              v-list-item-title Settings
+          v-divider
+          v-list-item(@click="Logout" color="red")
+            v-list-item-icon
+              v-icon mdi-logout
+            v-list-item-content
+              v-list-item-title Logout
 </template>
 <script>
   import { mapState } from 'vuex'
@@ -73,19 +96,19 @@
       return {
         drawer: false,
         user_menu_items: [
-          { icon: 'mdi-user', text: 'Profile', route: "/admins/users/profile" },
-          { icon: 'mdi-user', text: 'update', route: "/admins/users/update" },
+          { icon: 'mdi-user', text: 'Profile', route: "/admin/users/profile" },
+          { icon: 'mdi-user', text: 'update', route: "/admin/users/update" },
           { icon: 'mdi-logout', text: 'Logout', route: "" }
         ],
         items: [
-          { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/admins/houses" },
-          { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/admins/house_models" },
-          { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/admins/modified_houses" },
-          { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admins/utilities'},
-          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admins/agencies" },
-          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admins/user-import" },
-          { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admins/support" },
-          { icon: 'mdi-comment-account-outline', text: 'មតិអតិថិជន', route: "/admins/feedback" }
+          { icon: 'mdi-home-city-outline', text: 'ផ្ទះគំរូ', route: "/admin/houses" },
+          { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/admin/house_models" },
+          { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/admin/modified_houses" },
+          { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admin/utilities'},
+          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admin/agencies" },
+          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import-file" },
+          { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admin/support" },
+          { icon: 'mdi-comment-account-outline', text: 'មតិអតិថិជន', route: "/admin/feedback" }
         ],
         items2: [
           { picture: 28, text: 'Brian Nang' },
@@ -102,7 +125,7 @@
       },
       Logout(){
         this.$store.dispatch('logOut')
-        this.$router.push('/admins/login')
+        this.$router.push('/admin/login')
       }
     },
     computed: {

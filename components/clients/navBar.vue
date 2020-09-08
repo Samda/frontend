@@ -2,7 +2,7 @@
 div
   v-app-bar.d-none.d-sm-block(app color="#DFE0DF")
     v-toolbar-title
-      a(href="/")
+      nuxt-link(to="/")
         v-img(
           max-height="60",
           max-width="60",
@@ -22,7 +22,7 @@ div
       ) {{ item.text }}
   v-app-bar.d-block.d-sm-none(app)
     v-toolbar-title
-      a(href="/")
+      nuxt-link(to="/")
         v-img(
           max-height="50",
           max-width="50",

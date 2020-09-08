@@ -92,12 +92,11 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
+        light: {
+          primary: '#6b4912',
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: '#78a152',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
@@ -125,9 +124,9 @@ export default {
     },
 
     redirect: {
-      login: '/admins/login',
-      logout: '/admins/login',
-      home: '/admins'
+      login: '/admin/login',
+      logout: '/admin/login',
+      home: '/admin'
     },
 
     strategies: {
