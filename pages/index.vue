@@ -4,13 +4,12 @@ v-app
 </template>
 
 <script>
-import landingPageSection from "@/components/clients/landingPageSection";
-
+import landingPageSection from '@/components/clients/landingPageSection'
 export default {
   layout: "default",
   components: {
-    landingPageSection,
-  },
+    landingPageSection
+  }
 };
 </script>
 

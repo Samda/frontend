@@ -1,9 +1,10 @@
 export const mutations = {
-  setAuth(state, data){
-    let auth_user = JSON.stringify(data.results)
+  setAuth(state, response){
+    let auth_user = JSON.stringify(response.data)
     localStorage.setItem('auth_user', auth_user)
-    this.$auth.setUserToken(data.results.auth_token)
-    this.$auth.setUser(data.results.user)
+    localStorage.setItem('auth_token', response.headers.authorization)
+    this.$auth.setUserToken(response.headers.authorization)
+    this.$auth.setUser(response.data)
   },
   isLoggedIn(state, getters){
     return state.auth.user
@@ -13,16 +14,18 @@ export const mutations = {
 export const actions = {
   logOut() {
     localStorage.removeItem('auth_user')
+    localStorage.removeItem('auth_token')
     this.$auth.logout()
   },
 
-  async userLogin({commit}, loginInfo) {
+  userLogin({commit}, loginInfo) {
+
     try {
-      let response = await this.$auth.loginWith('local', { data: loginInfo }).then((res) => {
-        let data = res.data
-        commit('setAuth', data)
+      let response = this.$axios.post('/api/v1/auth/login', loginInfo).then((res) => {
+        debugger
+        commit('setAuth', res)
+        this.$router.push('/admins')
       })
-      this.$router.push('/admin')
     } catch (error) {
       let err = error.response ? error.response.data.error : "Sorry an error occured, check your internet"
       console.log(err)

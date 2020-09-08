@@ -1,6 +1,5 @@
 <template lang="pug">
 div
-  carouselHeader
   v-container
     v-row(justify="space-around", align="center", height="500px")
       v-col.pa-15(cols="12", md="6")
@@ -68,16 +67,7 @@ div
 </template>
 
 <script>
-import carouselHeader from "@/components/clients/carouselHeader";
-import parallax from "vue-parallaxy";
-import hooperStyle from "hooper/dist/hooper.css";
-import { Hooper, Slide } from 'hooper';
 export default {
-  components: {
-    carouselHeader,
-    Hooper,
-    Slide
-  },
   data() {
     return {
       hooperSettings: {

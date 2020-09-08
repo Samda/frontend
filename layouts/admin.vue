@@ -1,8 +1,9 @@
 <template lang="pug">
   v-main
-    v-app(id="inspire" style="padding-bottom: 50px;")
+    v-app(id="inspire")
       NavbarAdmin(v-if="$auth.loggedIn")
-      nuxt
+      div.mb-15
+        nuxt
       footerAdmin
 </template>
 
@@ -16,15 +17,16 @@ export default {
     NavbarAdmin,
     footerAdmin
   },
-  beforeCreate() {
-    let auth = JSON.parse(localStorage.getItem('auth_user'))
-    if(auth){
-      this.$nuxt.$auth.setToken('local', auth.auth_token)
-      this.$auth.setUser(auth.user)
-      this.$axios.defaults.headers.common['Authorization'] = auth.auth_token
+  created(){
+    if(this.$auth.loggedIn){
+      let auth_user = JSON.parse(localStorage.getItem("auth_user"))
+      let auth_token = localStorage.getItem("auth_token")
+      this.$nuxt.$auth.setToken('local', auth_token)
+      this.$auth.setUser(auth_user)
+      this.$axios.defaults.headers.common['Authorization'] = auth_token
     }
     else {
-      this.$router.push('/admins/contents/login')
+      this.$router.push('/admins/login')
     }
   }
 }

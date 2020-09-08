@@ -2,7 +2,8 @@
 v-main
   v-app#inspire
     navBar
-    Nuxt
+    v-container
+      Nuxt
     footerMain
     feedBack
 </template>
@@ -13,6 +14,7 @@ import footerMain from "@/components/clients/footerMain";
 import feedBack from "@/components/clients/feedBack";
 
 export default {
+  name: "default",
   components: {
     feedBack,
     footerMain,

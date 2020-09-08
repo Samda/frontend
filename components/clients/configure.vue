@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  v-container(fluid style="position: fixed; top: 0;padding: 0px; ")
+  v-container(style="position: fixed; top: 0;padding: 0px; ")
     v-row
       v-col(cols="12")
         v-sheet.mt-n5(
@@ -30,15 +30,15 @@ div
                   value="finish")
                   span Finish
                   v-icon mdi-check
-  div
+  v-container(fluid)
     v-row(no-gutters)
       v-col(cols="12" md="8" sm="12")
-        .carousel(style=" padding-left: 5px;position: fixed; top: 50px; width: 750px; height: 70vh;")
+        .carousel(style=" padding-left: 5px; position: fixed; top: 50px; width: 750px; height: 70vh;")
           .text-content(style="display: inline;")
             .text-center.mt-5.text-uppercase
-              span.mr-2.grey--text Model:
+              span.mr-2.grey--text
               span.text-h5.brown--text
-                strong Twin Villa
+                strong វីឡាភ្លោះ
             v-btn.pa-0( to="/" small tile text color="#5b3804")
                 v-icon(left) mdi-chevron-left
                 | go back

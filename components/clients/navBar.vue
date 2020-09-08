@@ -1,6 +1,6 @@
 <template lang="pug">
-v-container(fluid)
-  v-app-bar.d-none.d-sm-block(app)
+div
+  v-app-bar.d-none.d-sm-block(app color="#DFE0DF")
     v-toolbar-title
       a(href="/")
         v-img(
@@ -122,8 +122,8 @@ export default {
 
 <style lang="scss" scoped>
 a.navbar-items:hover,
-a.v-btn--active:hover {
-  border-bottom: 2px solid #4e342e;
-  color: #4e342e;
+a.v-btn--active:hover, a.v-btn--active {
+  border-bottom: 2px solid #78a152;
+  color: #78a152;
 }
 </style>

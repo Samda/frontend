@@ -1,15 +1,18 @@
+import colors from 'vuetify/es5/util/colors'
 
 export default {
+  server: {
+    port: 8000, // default: 3000
+    host: '0.0.0.0' // default: localhost
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-
+  mode: 'spa',
   // router: {
   //   base: '/'
   // },
-
-  mode: 'spa',
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -19,10 +22,6 @@ export default {
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
-  server: {
-    port: 8000, // default: 8000
-    host: '0.0.0.0' // default: localhost
-  },
   head: {
     title: 'KH LAND Co.,ltd.',
     meta: [
@@ -33,7 +32,7 @@ export default {
       { charset: 'utf-8' },
       { "http-equiv": "X-UA-Compatible", content: "IE=edge" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Realestate Leading Company In Cambodia' }
     ],
     link: [
       { rel: "manifest", href: "/manifest.json" },
@@ -79,15 +78,6 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // '@nuxtjs/vuetify'
-    // [
-    //   '@nuxtjs/router',
-    //   {
-    //     path: 'router',
-    //     fileName: 'index.js',
-    //     keepDefaultRouter: true,
-    //   },
-    // ]
   ],
   /*
   ** Nuxt.js modules
@@ -98,74 +88,82 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     "nuxt-leaflet",
-
-
   ],
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      dark: false,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        }
+      }
+    }
+  },
   /*
   ** Build configuratioan
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    vender: ['axios', 'vuetify'],
-    postcss: {
-      preset: {
-        features: {
-          customProperties: false
-        }
-      },
+  },
 
-      extend(config, { isDev }) {
-        const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
-        vueLoader.options.transformToRequire['img'] = ['src', 'data-src']
-        if (isClient) {
-          vue.transformAssetUrls.video = ['src', 'poster']
-        }
-      }
-    }
-  },
   axios: {
-    baseURL: process.env.npm_package_app_url || "http:locahost:3000/api/v1"
+    baseURL: process.env.npm_package_app_url
   },
+
   auth: {
     cookie: {
       options: {
         secure: false,
       },
     },
+
     redirect: {
-      login: '/admins/contents/login',
-      logout: '/admins/contents/login',
-      // callback: '/login',
-      home: '/'
+      login: '/admins/login',
+      logout: '/admins/login',
+      home: '/admins'
     },
+
     strategies: {
       local: {
         endpoints: {
           headers: {
-            contentType: "application/json"
+            contentType: "application/json",
+            Accept: "application/json"
           },
           login: {
-            url: '/auth/login',
+            url: '/api/v1/auth/login',
             method: 'post',
             propertyName: 'data.token',
           },
           user: false,
           logout: false,
-          // user: {
-          //   url: 'v1/users/:id',
-          //   method: 'get',
-          //   propertyName: 'data.user'
-          // },
-          // logout: {
-          //   url: 'auth/logout',
-          //   method: 'post',
-          //   propertyName: 'data.token',
-          // }
         },
-        tokenType: '',
-        tokenName: 'x-auth',
+        tokenType: 'Bear',
+        tokenName: 'Authentication',
         autoFetchUser: false
       }
+    }
+  },
+
+  extend(config, ctx) {
+    // Run ESLint on save
+    if(ctx.isDev && ctx.isClient){
+      config.module.rules.push({
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
     }
   }
 }
