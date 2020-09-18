@@ -45,7 +45,7 @@ export const actions = {
   },
 
   async FETCH_FEEDBACKS({commit}, params){
-    try{
+    try {
       let res = await this.$axios.get(`/api/v1/feedbacks?${params}`).then(response => {
         commit('setFeedbacks', response.data)
         commit('setLink', response.data)
@@ -53,7 +53,7 @@ export const actions = {
         console.log('error')
       })
     }
-    catch{
+    catch {
       console.log("bad connection")
     }
 

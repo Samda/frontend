@@ -16,8 +16,8 @@
           v-list-item(
             v-for="item in items"
             :key="item.text"
-            link
-            @click="Linkto(item.route)")
+            router
+            :to="(item.route)")
             v-list-item-action
               v-icon {{ item.icon }}
             v-list-item-content
@@ -55,25 +55,24 @@
             v-bind="attrs"
             v-on="on"
             color="#6b4912"
-            tile
             text
             )
             v-icon(left) mdi-account
             | {{$auth.user.email}}
         v-list
-          v-list-item(@click="")
+          v-list-item(router to="/admin/users/2")
             v-list-item-icon
               v-icon mdi-account-box-outline
             v-list-item-content
               v-list-item-title My Profile
           v-divider
-          v-list-item(@click="")
+          v-list-item(router to="/admin/users/edit/2")
             v-list-item-icon
               v-icon mdi-account-edit
             v-list-item-content
               v-list-item-title Edit Profile
           v-divider
-          v-list-item(@click="")
+          v-list-item(router to="settings")
             v-list-item-icon
               v-icon mdi-cog
             v-list-item-content
@@ -107,7 +106,7 @@
           { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admin/utilities'},
           { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admin/agencies" },
           { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import-file" },
-          { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admin/support" },
+          { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admin/system-support" },
           { icon: 'mdi-comment-account-outline', text: 'មតិអតិថិជន', route: "/admin/feedback" }
         ],
         items2: [
