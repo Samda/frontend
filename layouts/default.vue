@@ -10,7 +10,7 @@ v-main
 
 <script>
 import navBar from "@/components/clients/navBar";
-import Footer from "@/components/clients/Footer";
+import FooterMain from "@/components/clients/FooterMain";
 import feedBack from "@/components/clients/feedBack";
 
 export default {

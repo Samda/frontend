@@ -34,8 +34,8 @@ export default {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 14,
-      center: [11.55645, 104.9282],
-      markerPos: [11.563015, 104.87324],
+      center: [11.563015, 104.87324],
+      markerPos: [11.563, 104.873],
     };
   },
 };
