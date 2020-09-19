@@ -1,35 +1,64 @@
 <template lang="pug">
-v-footer.main-footer(, dark, padless, color="#6b4912")
+v-footer(padless, color="#8a6628")
   v-container.ma-0.pa-0(fluid)
-    v-row.pb-10(align="top", no-gutters, style="background-color: #78a152")
-      v-col(cols="3")
-        v-card.brown--text.text--darken-2(style="background-color: #78a152", flat)
-          v-card-title.justify-center(color="#6b4912") KH LAND
-      v-col(cols="9")
-        v-row(no-gutters)
-          v-col(v-for="title in itemTitle", :key="title")
-            v-card-title.brown--text.text--darken-2(style="background-color: #78a152") {{ title.text }}
-            v-list.pl-4(
-              style="background-color: #78a152",
-              v-for="(content, index) in itemContent",
-              :key="index"
+    v-row
+      v-col(cols="12") 
+        v-container
+          v-row(align="center", justify="center")
+            v-divider.mx-4(style="height:5px")
+            v-btn.mx-4(
+              v-for="icon in icons",
+              :key="icon",
+              icon,
+              small,
+              fab,
+              outlined,
+              color="secondary"
             )
-              v-list-item-title.brown--text.text--darken-2 {{ content.text }}
-    v-row(style="background-color: #628740")
+              v-icon(size="24px") {{ icon }}
+            v-divider
+    v-row(align="center", justify="center")
+      v-img(
+        max-height="120",
+        max-width="120",
+        contain,
+        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+      )
+    v-row(justify="center")
       v-col(cols="12")
-        .caption Copyright © 2020 by KHLAND CO,.LTD. All Right Reserved.
+        h4.text-center.font-weight-regular.light-green--text.text--darken-2 Copyright &copy; khlang co,.LTD.
+    v-row
+      v-col(cols="12")
+        v-container(style="background-color:#8a6628")
+          v-row(justify="center")
+            v-btn(
+              v-for="title in itemTitle",
+              :key="title",
+              depressed,
+              style="background-color:#8a6628"
+            )
+              v-btn--flat
+                v-btn--text {{ title.text }}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      brandName: [{ text: "KH LAND" }],
+      icons: [
+        "mdi-facebook",
+        "mdi-instagram",
+        "mdi-twitter",
+        "mdi-telegram",
+        "mdi-whatsapp",
+      ],
+
       itemTitle: [
+        { text: "HOME" },
         { text: "ABOUT" },
-        { text: "INTERACT" },
-        { text: "COMMERCIAL" },
-        { text: "PURCHASE" },
+        { text: "SUPPORT" },
+        { text: "CONTACT" },
+        { text: "LOGIN" },
       ],
       itemContent: [
         { text: "fake content" },
@@ -43,7 +72,13 @@ export default {
 </script>
 
 <style type="scss" scoped>
-  .main-footer {
-    color: #6b4912;
-  }
+.main-footer {
+  color: #a37e3e;
+}
+v-btn:hover {
+  color: chartreuse !important;
+}
+.greenlight--text {
+  color: green darken-1 !important;
+}
 </style>
