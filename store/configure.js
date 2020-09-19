@@ -19,18 +19,18 @@ export const state = () => ({
           values: [
             {
               id: 1,
-              image: 'https://5.imimg.com/data5/KC/UX/MY-45131211/wash-basin-500x500.jpg',
-              pre_image: 'https://i.picsum.photos/id/554/600/350.jpg?hmac=DRfbWTCjVTtoTvp_MsSuBCofpnKzNTRIIDZtHokMGXo'
+              image: 'https://homebnc.com/homeimg/2017/03/front-yard-landscaping-garden-ideas-featured-homebnc.jpg',
+              pre_image: 'https://homebnc.com/homeimg/2017/03/front-yard-landscaping-garden-ideas-featured-homebnc.jpg'
             },
             {
               id: 2,
-              image: 'https://secure.img1-fg.wfcdn.com/im/33521391/resize-h600-w600%5Ecompr-r85/5786/57869117/Bathroom+Wall+Tile.jpg',
-              pre_image: 'https://i.picsum.photos/id/642/600/350.jpg?hmac=e0ycJ5tS4UU8h1FEPJbbGSgc4YnlgsIQrwUDFJt39Jk'
+              image: 'https://www.homedesigninspired.com/wp-content/uploads/2020/06/front-house-flower-bed-ideas-feature-1.jpg',
+              pre_image: 'https://www.homedesigninspired.com/wp-content/uploads/2020/06/front-house-flower-bed-ideas-feature-1.jpg'
             },
             {
               id: 3,
-              image: 'https://cdn.shopify.com/s/files/1/1140/6776/products/Anchorage_Cream_Tiles_on_Bathroom_Wall_grande.jpg?v=1548782131',
-              pre_image: 'https://i.picsum.photos/id/330/600/350.jpg?hmac=_gmZDbngfHbt9NDQZSdffksMjYQzKf28JwhnPzGpimE'
+              image: 'https://i.pinimg.com/736x/2c/e5/dc/2ce5dc3dce688acb71c8252ed2f5869a.jpg',
+              pre_image: 'https://i.pinimg.com/736x/2c/e5/dc/2ce5dc3dce688acb71c8252ed2f5869a.jpg'
             }
           ]
         },
@@ -106,28 +106,28 @@ export const state = () => ({
       attributes: [
         {
           id: 1,
-          title: 'Outdoor Wall Tiles',
+          title: 'ROOF TILES 3',
           values: [
             {
               id: 1,
-              image: 'https://5.imimg.com/data5/IH/XU/MY-1689641/ceramic-wall-tiles-250x250.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              image: 'https://www.cupapizarras.com/wp-content/uploads/2018/11/CUPA-natural-slate.png',
+              pre_image: 'https://www.cupapizarras.com/wp-content/uploads/2018/11/CUPA-natural-slate.png'
             },
             {
               id: 2,
-              image: 'https://media.casa39.com/media/catalog/product/cache/3ef59482406050ce57d87f18d0364b53/j/8/j86619.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              image: 'https://www.durangohomesforsale.com/uploads/agent-1/roofing-material-options.jpg',
+              pre_image: 'https://www.durangohomesforsale.com/uploads/agent-1/roofing-material-options.jpg'
             },
             {
               id: 3,
-              image: 'https://lh3.googleusercontent.com/d/1eN0_zEDM_tG5ESDDBj241eoHU5sXiJEY',
-              pre_image: 'https://picsum.photos/600/350'
+              image: 'https://cdn.pixabay.com/photo/2016/08/12/13/05/tile-1588428_960_720.jpg',
+              pre_image: 'https://cdn.pixabay.com/photo/2016/08/12/13/05/tile-1588428_960_720.jpg'
             }
           ]
         },
         {
           id: 2,
-          title: 'Roof Tiles',
+          title: 'Outdoor Wall Tiles',
           values: [
             {
               id: 1,

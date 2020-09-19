@@ -22,13 +22,13 @@ div
                   inset
                   vertical)
               v-slide-item
-                v-btn.btn-timeline(router to="configuration/configured")
+                v-btn.btn-timeline(router to="/configuration/configured")
                   | Details
                   v-icon(left) mdi-check
   v-container(fluid)
     v-row(no-gutters)
       v-col(cols="12" md="8" sm="12")
-        .sidebar-carousel
+        .sidebar-carousel.mt-5
           .carousel
             .text-content(style="display: inline;")
               .text-center.mt-15.text-uppercase
@@ -43,10 +43,11 @@ div
               height="400"
               :hide-delimiter-background="true"
               delimiter-icon="mdi-minus"
-              show-arrows-on-hover)
+              show-arrows-on-hover
+              value="model")
               v-carousel-item(
                 color="black"
-                v-for="(slide, i) in slides"
+                v-for="(slide, i) in carousel_images"
                 :key="i")
                 v-img(:src="slide.src" contain)
 
@@ -56,13 +57,13 @@ div
             template(v-for="(config, index) in configureOptions")
               div.values-container(:id="replaceSpaceWith(config.head_title, '_')")
                 div.sticky-option.config-header
-                  h6.text-h6 {{config.title}}
+                  h6.text-h6 {{ config.title }}
                 template(v-for="(con_attr, index) in config.attributes")
                   v-item-group(mandatory v-model="selected.attr[index]")
                     v-container(class="pa-0")
                       v-row
                         v-col.text-overline.config-key(cols="12")
-                          .caption {{ con_attr.title }} {{ selected.attr[index] }}
+                          .caption {{ con_attr.title }} {{ model }}
                       v-row
                         template(v-for="(value, index) in con_attr.values")
                           v-col.config-body(
@@ -70,11 +71,10 @@ div
                             cols="4")
                             v-item(v-slot:default="{ active, toggle }")
                               v-img(
-                                :ref="config.attributes.filter(title => title == con_attr.title)"
                                 :key="index"
                                 :src="value.image"
                                 height="80"
-                                class="text-right pa-2"
+                                class="text-right pa-2 item-image"
                                 :class="active ? 'item-active' : ''"
                                 @click="getImage(value.pre_image); toggle()")
                 //--
@@ -130,6 +130,10 @@ export default {
     },
     configureOptions(){
       return this.$store.getters['configure/getConfigureOptions']
+    },
+
+    carousel_images(){
+      return this.slides
     }
   },
 
@@ -137,25 +141,18 @@ export default {
     replaceSpaceWith(text, replace_text) {
       return text.toString().toLowerCase().replace(' ', replace_text)
     },
+
     getImage(image){
-      let newSlide = this.slides.filter( slide => (slide.active === true) )
-      if(newSlide.length > 1){
-        this.slides.pop()
-        this.slides.filter( slide => (slide.active == true))
+      let index = this.slides.findIndex( slide => slide.active === true )
+      if(index > 0){
+        this.slides[index].src = image
+        this.model = index
       }else{
-        this.slides.filter( slide => (slide.active == true))
-      }
-
-      this.model = this.slides.findIndex( slide => slide.active === true )
-
-      if(newSlide){
-        this.slides.splice(-2, 1)
-        this.slides.push({ src: image, active: true })
-      } else {
         this.slides.push({ src: image, active: true })
       }
     }
   },
+
 
   mounted(){
     const makeNavLinksSmooth = ( ) => {
@@ -216,6 +213,10 @@ span.v-btn__content span, i {
   color: #5b3804 !important;
 }
 
+.item-image:hover {
+  cursor: pointer;
+}
+
 div.config-section {
   margin-bottom: 15px;
 
@@ -259,6 +260,7 @@ div.config-values {
 }
 
 div.thumbnail-image {
+  cursor: pointer;
   width: 90px;
   height: 90px;
   text-align: center;
