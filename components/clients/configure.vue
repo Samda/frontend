@@ -30,14 +30,13 @@ div
       v-col(cols="12" md="8" sm="12")
         .sidebar-carousel.mt-5
           .carousel
-            .text-content(style="display: inline;")
+            .text-content
               .text-center.mt-15.text-uppercase
-                span.mr-2.grey--text
                 span.text-h5.brown--text
                   strong វីឡាភ្លោះ
-              v-btn.pa-0( to="/" small tile text color="#5b3804")
-                  v-icon(left) mdi-chevron-left
-                  | go back
+              v-btn.pa-2( to="/" small tile text color="#5b3804")
+                v-icon(left) mdi-chevron-left
+                | go back
             v-carousel(
               v-model="model"
               height="400"
@@ -49,8 +48,23 @@ div
                 color="black"
                 v-for="(slide, i) in carousel_images"
                 :key="i")
-                v-img(:src="slide.src" contain)
-
+                v-row(
+                  class="fill-height ma-0"
+                  align="center"
+                  justify="center")
+                  v-img(
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                    :src="slide.src"
+                    lazy-src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                    contain)
+                    template(v-slot:placeholder)
+                      v-row(
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center")
+                        v-progress-circular(indeterminate color="brown darken-4")
       v-col(cols="12" md="4" sm="12")
         div.options-container.ml-n15(style="padding-top: 90px; top: 100px;")
           div.option-section.config-section
@@ -59,24 +73,29 @@ div
                 div.sticky-option.config-header
                   h6.text-h6 {{ config.title }}
                 template(v-for="(con_attr, index) in config.attributes")
-                  v-item-group(mandatory v-model="selected.attr[index]")
+                  v-item-group(mandatory)
                     v-container(class="pa-0")
                       v-row
                         v-col.text-overline.config-key(cols="12")
                           .caption {{ con_attr.title }} {{ model }}
                       v-row
                         template(v-for="(value, index) in con_attr.values")
-                          v-col.config-body(
-                            :key="value.id"
-                            cols="4")
+                          v-col.config-body(cols="4")
                             v-item(v-slot:default="{ active, toggle }")
                               v-img(
                                 :key="index"
                                 :src="value.image"
+                                lazy-src="https://www.khland.com.kh/assets/images/kh_lg.png"
                                 height="80"
                                 class="text-right pa-2 item-image"
                                 :class="active ? 'item-active' : ''"
-                                @click="getImage(value.pre_image); toggle()")
+                                @click=" getImage(value.pre_image); toggle(); setConfigOptions(config.head_title, con_attr.title, value.id);")
+                                template(v-slot:placeholder)
+                                  v-row(
+                                    class="fill-height ma-0"
+                                    align="center"
+                                    justify="center")
+                                    v-progress-circular( indeterminate color="brown darken-4")
                 //--
                   div.config-values
                     template(v-for="value in con_attr.values")
@@ -104,8 +123,10 @@ export default {
   data () {
     return {
       prev_image: '',
-      selected: {
-        attr: []
+      configured_selected: {
+        head_title: [{
+          attributes: []
+        }]
       },
       model: 0,
       slides: [
@@ -150,6 +171,10 @@ export default {
       }else{
         this.slides.push({ src: image, active: true })
       }
+    },
+
+    setConfigOptions(val1,val2,val3){
+      console.log(`${val1}, ${val2}, ${val3}`)
     }
   },
 

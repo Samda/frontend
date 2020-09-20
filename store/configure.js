@@ -61,18 +61,18 @@ export const state = () => ({
           values: [
             {
               id: 1,
-              image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              image: "https://www.nicepng.com/png/detail/58-584765_contact-us-for-a-free-quote-garden-flower.png",
+              pre_image: 'https://www.nicepng.com/png/detail/58-584765_contact-us-for-a-free-quote-garden-flower.png'
             },
             {
               id: 2,
-              image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              image: 'https://lh3.googleusercontent.com/proxy/LaN3Lu1LI696PQVBt7JkW-UbnDGIbUosy-6A30LULbvMjym-uBoyo9Nf56LVvPkAJymBzEYy7S_-gZbt280ziBi9eTkOrSN4msOfLz_FkQmbS2sVdHAFf6GpUwlF7-B6Yh81pGq3ac7NCYr6',
+              pre_image: 'https://lh3.googleusercontent.com/proxy/LaN3Lu1LI696PQVBt7JkW-UbnDGIbUosy-6A30LULbvMjym-uBoyo9Nf56LVvPkAJymBzEYy7S_-gZbt280ziBi9eTkOrSN4msOfLz_FkQmbS2sVdHAFf6GpUwlF7-B6Yh81pGq3ac7NCYr6'
             },
             {
               id: 3,
-              image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              image: 'https://br-garden.co.uk/pub/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/i/m/img_1068_800x533.png',
+              pre_image: 'https://br-garden.co.uk/pub/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/i/m/img_1068_800x533.png'
             }
           ]
         },
@@ -258,17 +258,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://www.pngkey.com/png/full/250-2506199_home-furniture-png.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.pngkey.com/png/full/250-2506199_home-furniture-png.png'
             },
             {
               id: 2,
               image: 'https://s3.eu-west-1.amazonaws.com/openreply-poltronafrau/prod/poltronafrau/catalog/category/D_divani_1_1.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://s3.eu-west-1.amazonaws.com/openreply-poltronafrau/prod/poltronafrau/catalog/category/D_divani_1_1.png'
             },
             {
               id: 3,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/sofa1.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/sofa1.png'
             }
           ]
         },
@@ -279,17 +279,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char1.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char1.png'
             },
             {
               id: 2,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char2.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char2.png'
             },
             {
               id: 3,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char4.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char4.png'
             }
           ]
         }
@@ -328,17 +328,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/light%202.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%203.jpg'
             },
             {
               id: 2,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/light%20a.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%202.jpg'
             },
             {
               id: 3,
               image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/light%20c.png',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%201.jpg'
             }
           ]
         }
