@@ -39,31 +39,95 @@ div
   v-container(fluid)
     v-row
       v-col(cols="6", lg="3", md="4", sm="4", :key="i", v-for="i in 6")
-        v-card(
-          class="mx-auto"
-          max-width="400")
-          v-img(
-            class="white--text align-end"
-            height="200px"
-            src="https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%201.jpg")
+        v-card.mx-auto(max-width="400")
+          v-img.white--text.align-end(
+            height="200px",
+            src="https://raw.githubusercontent.com/Samda/khland-assets/master/living%20room%201.jpg"
+          )
             v-card-title Twin Villa
           v-card-subtitle.pb-0 Two Bedroom
           v-card-text.text--primary
             div Twin Villa
             div A great family house for you.
           v-card-actions
-            v-btn(
-              color="brown"
-              text) Share
-            v-btn(
-              color="brown"
-              text) Explore
-    v-row(justify="center" align="center")
+            v-btn(color="brown", text) Share
+            v-btn(color="brown", text) Explore
+
+    v-row
+      v-col(cols="12")
+        v-img(
+          gradient="rgba(0,0,0,.4), rgba(0,0,0,.4) ",
+          height="450px",
+          src="https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/117879720_1802414966591401_3975173550225361756_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEAV2Utzzv-oLSnwD5JEX3qwMaW0-45qmfAxpbT7jmqZwcgkYBp3dxHhyGhfB3k8W0&_nc_ohc=J-dr_L3EApkAX9bPErf&_nc_ht=scontent.fpnh1-1.fna&oh=86f3958e691bdbab90412e3152202e6e&oe=5F8B99F0"
+        )
+          v-container
+            v-row.mb-15
+              v-col(cols="12")
+                container
+                  v-row(justify="center")
+                    h1.white--text Real Estate Cambodia with KH land
+                  v-row(justify="center")
+                    h5.white--text Our customer care team is among the highest-rated support squads online, fast, muilti
+            v-row.pt-15(justify="space-around", align="center")
+              v-col(cols="3")
+                v-container(fluid)
+                  v-row(justify="center", align="center")
+                    v-col
+                      v-img(
+                        max-height="60",
+                        max-width="60",
+                        contain,
+                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                      )
+                      h4.white--text this is text
+                      h4.white--text this is text 2
+                      h4.white--text this is text 3
+              v-col(cols="3")
+                v-container(fluid)
+                  v-row
+                    v-col
+                      v-img(
+                        max-height="60",
+                        max-width="60",
+                        contain,
+                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                      )
+                      h4.white--text this is text
+                      h4.white--text this is text 2
+                      h4.white--text this is text 3
+              v-col(cols="3")
+                v-container(fluid)
+                  v-row
+                    v-col
+                      v-img(
+                        max-height="60",
+                        max-width="60",
+                        contain,
+                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                      )
+                      h4.white--text this is text
+                      h4.white--text this is text 2
+                      h4.white--text this is text 3
+              v-col(cols="3")
+                v-container(fluid)
+                  v-row
+                    v-col
+                      v-img(
+                        max-height="60",
+                        max-width="60",
+                        contain,
+                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                      )
+                      h4.white--text this is text
+                      h4.white--text this is text 2
+                      h4.white--text this is text 3
+
+    v-row(justify="center", align="center")
       v-col(cols="6")
         div(style="padding: 120px 0;")
           h1.text-center.brown--text.pa-7 Build your dream house with us
           .text-center
-            v-btn( to="/configuration" class="pa-7" block outlined color="brown") Build now
+            v-btn.pa-7(to="/configuration", block, outlined, color="brown") Build now
 </template>
 
 <script>
@@ -83,24 +147,24 @@ export default {
         hoverPause: true,
         breakpoints: {
           2400: {
-              itemsToShow: 5
+            itemsToShow: 5,
           },
           1800: {
-              itemsToShow: 4
+            itemsToShow: 4,
           },
           1500: {
-              itemsToShow: 3
+            itemsToShow: 3,
           },
           1100: {
-              itemsToShow: 2.5
+            itemsToShow: 2.5,
           },
           0: {
-              itemsToShow: 1.5
-          }
-        }
-      }
-    }
-  }
+            itemsToShow: 1.5,
+          },
+        },
+      },
+    };
+  },
 };
 </script>
 
@@ -117,5 +181,8 @@ export default {
   background: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
+}
+#background {
+  color: brightness(10%) !important;
 }
 </style>
