@@ -6,7 +6,7 @@ v-container(fluid)
       v-text-field.mb-n5(label="Your full name", single-lined, outlined)
       v-text-field.mb-n5(label="Your email address", single-lined, outlined)
       v-textarea(label="Your message", outlined)
-      v-btn.py-8(block, bottom, color="teal lighten-1", large) Send your message
+      v-btn.py-8(block, bottom, color="#704F42", large) Send your message
     v-col(cols="12", lg="9", md="8")
       client-only
         v-container
