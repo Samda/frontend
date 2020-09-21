@@ -1,9 +1,9 @@
 <template lang="pug">
 div
   v-main
-    v-container.grey.lighten-5(fluid fill-height)
+    v-container.grey.lighten-5.mx-0.px-0(fluid, fill-height)
       v-row.px-10
-        v-col(cols="12", md="3", sm="3", align="center" )
+        v-col(cols="12", md="3", sm="3", align="center")
           v-img.mb-5(
             max-height="60",
             max-width="60",
@@ -17,13 +17,13 @@ div
                 v-list-item-content
                   v-list-item-title(v-text="item.text", color="brown darken-4")
 
-        v-col.pa-0(cols="12", md="9", sm="9", align="center")
-          v-container(fluid)
-            v-expansion-panels( flat)
+        v-col.pt-16(cols="12", md="9", sm="9")
+          v-container.grey.lighten-5(fluid)
+            v-expansion-panels(flat)
               v-expansion-panel(v-for="(item, i) in 5", :key="i")
-                v-expansion-panel-header
-                  h1.brown--text support text {{i+1}}
-                v-expansion-panel-content.pt-5.brown--text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                v-expansion-panel-header.grey.lighten-5
+                  h3.brown--text support text {{ i + 1 }}
+                v-expansion-panel-content.grey.lighten-5.pt-5.brown--text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </template>
 
 <script>
