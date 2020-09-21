@@ -22,61 +22,80 @@ div
                   inset
                   vertical)
               v-slide-item
-                v-btn.btn-timeline(router to="configuration/configured")
+                v-btn.btn-timeline(router to="/configuration/configured")
                   | Details
                   v-icon(left) mdi-check
   v-container(fluid)
     v-row(no-gutters)
       v-col(cols="12" md="8" sm="12")
-        .sidebar-carousel
+        .sidebar-carousel.mt-5
           .carousel
-            .text-content(style="display: inline;")
+            .text-content
               .text-center.mt-15.text-uppercase
-                span.mr-2.grey--text
                 span.text-h5.brown--text
                   strong វីឡាភ្លោះ
-              v-btn.pa-0( to="/" small tile text color="#5b3804")
-                  v-icon(left) mdi-chevron-left
-                  | go back
+              v-btn.pa-2( to="/" small tile text color="#5b3804")
+                v-icon(left) mdi-chevron-left
+                | go back
             v-carousel(
               v-model="model"
               height="400"
               :hide-delimiter-background="true"
               delimiter-icon="mdi-minus"
-              show-arrows-on-hover)
+              show-arrows-on-hover
+              value="model")
               v-carousel-item(
                 color="black"
-                v-for="(slide, i) in slides"
+                v-for="(slide, i) in carousel_images"
                 :key="i")
-                v-img(:src="slide.src" contain)
-
+                v-row(
+                  class="fill-height ma-0"
+                  align="center"
+                  justify="center")
+                  v-img(
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                    :src="slide.src"
+                    lazy-src="https://www.khland.com.kh/assets/images/kh_lg.png"
+                    contain)
+                    template(v-slot:placeholder)
+                      v-row(
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center")
+                        v-progress-circular(indeterminate color="brown darken-4")
       v-col(cols="12" md="4" sm="12")
         div.options-container.ml-n15(style="padding-top: 90px; top: 100px;")
           div.option-section.config-section
             template(v-for="(config, index) in configureOptions")
               div.values-container(:id="replaceSpaceWith(config.head_title, '_')")
                 div.sticky-option.config-header
-                  h6.text-h6 {{config.title}}
+                  h6.text-h6 {{ config.title }}
                 template(v-for="(con_attr, index) in config.attributes")
-                  v-item-group(mandatory v-model="selected.attr[index]")
+                  v-item-group(mandatory)
                     v-container(class="pa-0")
                       v-row
                         v-col.text-overline.config-key(cols="12")
-                          .caption {{ con_attr.title }} {{ selected.attr[index] }}
+                          .caption {{ con_attr.title }} {{ model }}
                       v-row
                         template(v-for="(value, index) in con_attr.values")
-                          v-col.config-body(
-                            :key="value.id"
-                            cols="4")
+                          v-col.config-body(cols="4")
                             v-item(v-slot:default="{ active, toggle }")
                               v-img(
-                                :ref="config.attributes.filter(title => title == con_attr.title)"
                                 :key="index"
                                 :src="value.image"
+                                lazy-src="https://www.khland.com.kh/assets/images/kh_lg.png"
                                 height="80"
-                                class="text-right pa-2"
+                                class="text-right pa-2 item-image"
                                 :class="active ? 'item-active' : ''"
-                                @click="getImage(value.pre_image); toggle()")
+                                @click=" getImage(value.pre_image); toggle(); setConfigOptions(config.head_title, con_attr.title, value.id);")
+                                template(v-slot:placeholder)
+                                  v-row(
+                                    class="fill-height ma-0"
+                                    align="center"
+                                    justify="center")
+                                    v-progress-circular( indeterminate color="brown darken-4")
                 //--
                   div.config-values
                     template(v-for="value in con_attr.values")
@@ -104,8 +123,10 @@ export default {
   data () {
     return {
       prev_image: '',
-      selected: {
-        attr: []
+      configured_selected: {
+        head_title: [{
+          attributes: []
+        }]
       },
       model: 0,
       slides: [
@@ -130,6 +151,10 @@ export default {
     },
     configureOptions(){
       return this.$store.getters['configure/getConfigureOptions']
+    },
+
+    carousel_images(){
+      return this.slides
     }
   },
 
@@ -137,25 +162,22 @@ export default {
     replaceSpaceWith(text, replace_text) {
       return text.toString().toLowerCase().replace(' ', replace_text)
     },
+
     getImage(image){
-      let newSlide = this.slides.filter( slide => (slide.active === true) )
-      if(newSlide.length > 1){
-        this.slides.pop()
-        this.slides.filter( slide => (slide.active == true))
+      let index = this.slides.findIndex( slide => slide.active === true )
+      if(index > 0){
+        this.slides[index].src = image
+        this.model = index
       }else{
-        this.slides.filter( slide => (slide.active == true))
-      }
-
-      this.model = this.slides.findIndex( slide => slide.active === true )
-
-      if(newSlide){
-        this.slides.splice(-2, 1)
-        this.slides.push({ src: image, active: true })
-      } else {
         this.slides.push({ src: image, active: true })
       }
+    },
+
+    setConfigOptions(val1,val2,val3){
+      console.log(`${val1}, ${val2}, ${val3}`)
     }
   },
+
 
   mounted(){
     const makeNavLinksSmooth = ( ) => {
@@ -216,6 +238,10 @@ span.v-btn__content span, i {
   color: #5b3804 !important;
 }
 
+.item-image:hover {
+  cursor: pointer;
+}
+
 div.config-section {
   margin-bottom: 15px;
 
@@ -259,6 +285,7 @@ div.config-values {
 }
 
 div.thumbnail-image {
+  cursor: pointer;
   width: 90px;
   height: 90px;
   text-align: center;
