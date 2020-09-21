@@ -14,9 +14,10 @@
       v-row
         v-col(cols="12" sm="12" md="6" lg="6" xl="6")
           div.sidebar-carousel
-            h1.config-header.text-h6.mt-10(style="color: #6b4912;" align="center" justify="center")
-              strong វីឡាតូលកូនកាត់
-            v-btn.pa-0( to="/configuration" small tile text color="#5b3804")
+            .text-centent
+              h1.config-header.text-h6.mt-8(style="color: #6b4912;" align="center" justify="center")
+                strong វីឡាតូលកូនកាត់
+              v-btn.pa-2( to="/configuration" small tile text color="#5b3804")
                 v-icon(left) mdi-chevron-left
                 | go back
             v-carousel(
