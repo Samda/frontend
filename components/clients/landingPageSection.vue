@@ -68,57 +68,18 @@ div
                     h1.white--text Real Estate Cambodia with KH land
                   v-row(justify="center")
                     h5.white--text Our customer care team is among the highest-rated support squads online, fast, muilti
-            v-row.pt-15(justify="space-around", align="center")
-              v-col(cols="3")
+            v-row.pt-15(justify="center")
+              v-col(cols="3", v-for="text in 4", :key="text") 
                 v-container(fluid)
-                  v-row(justify="center", align="center")
-                    v-col
+                  v-row(justify="center")
+                    v-col.text-center
                       v-img(
                         max-height="60",
                         max-width="60",
                         contain,
                         src="https://www.khland.com.kh/assets/images/kh_lg.png"
                       )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
+                      h4.white--text this is text 1
                       h4.white--text this is text 2
                       h4.white--text this is text 3
 
