@@ -1,34 +1,44 @@
 <template lang="pug">
-v-footer(color="green darken-1", padless)
-  v-container
+v-footer(padless, color="#8a6628")
+  v-container.ma-0.pa-0(fluid)
     v-row
-
-    //- v-row(align="center" justify="center")
-    //-   v-col(cols="10" color="green darken-1")
-    //-     v-card(
-    //-       flat
-    //-       tile
-    //-       class="green darken-1 white--text")
-    //-       v-card-text(class="ml-n8")
-    //-         v-btn(
-    //-           v-for="icon in icons"
-    //-           :key="icon"
-    //-           class="mx-4 blue-grey--text text--darken-4"
-    //-           icon
-    //-           small
-    //-           fab
-    //-           outlined)
-    //-           v-icon(size="24px") {{ icon }}
-    //-         v-spacer
-    //-       v-card-text(class="blue-grey--text text--darken-4 pt-0 pa-0")
-    //-         | Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    //-       v-divider(style="background-color: #3E2723")
-    //-       v-card-text(class="blue-grey--text text--darken-4 pa-0")
-    //-         | Copyright
-    //-         | &copy;
-    //-         | {{ new Date().getFullYear() }}
-    //-         span(class="ml-2 mr-2") KHLAND CO.,LTD
-    //-         | All Rights Reserved
+      v-col(cols="12") 
+        v-container
+          v-row(align="center", justify="center")
+            v-divider.mx-4(style="height:5px")
+            v-btn.mx-4(
+              v-for="icon in icons",
+              :key="icon",
+              icon,
+              small,
+              fab,
+              outlined,
+              color="secondary"
+            )
+              v-icon(size="24px") {{ icon }}
+            v-divider
+    v-row(align="center", justify="center")
+      v-img(
+        max-height="120",
+        max-width="120",
+        contain,
+        src="https://www.khland.com.kh/assets/images/kh_lg.png"
+      )
+    v-row(justify="center")
+      v-col(cols="12")
+        h4.text-center.font-weight-regular.light-green--text.text--darken-2 Copyright &copy; khlang co,.LTD.
+    v-row
+      v-col(cols="12")
+        v-container(style="background-color:#8a6628")
+          v-row(justify="center")
+            v-btn(
+              v-for="title in itemTitle",
+              :key="title",
+              depressed,
+              style="background-color:#8a6628"
+            )
+              v-btn--flat
+                v-btn--text {{ title.text }}
 </template>
 
 <script>
@@ -42,9 +52,33 @@ export default {
         "mdi-telegram",
         "mdi-whatsapp",
       ],
+
+      itemTitle: [
+        { text: "HOME" },
+        { text: "ABOUT" },
+        { text: "SUPPORT" },
+        { text: "CONTACT" },
+        { text: "LOGIN" },
+      ],
+      itemContent: [
+        { text: "fake content" },
+        { text: "make up content" },
+        { text: "test content" },
+        { text: "content try out" },
+      ],
     };
   },
 };
 </script>
-<style lang="scss" scoped>
+
+<style type="scss" scoped>
+.main-footer {
+  color: #a37e3e;
+}
+v-btn:hover {
+  color: chartreuse !important;
+}
+.greenlight--text {
+  color: green darken-1 !important;
+}
 </style>
