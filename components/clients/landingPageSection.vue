@@ -65,8 +65,9 @@ div
                 h1.mb-15.text--h4(style="color: #78a152;") ជ្រើរើសសំភារៈដោយខ្លួនអ្នកផ្ទាល់
           v-row
             v-col(
+              :key="i"
               class="d-flex justify-space-around"
-              v-for="content in contents")
+              v-for="(content, i) in contents")
               .text-center
                 p
                   img(
