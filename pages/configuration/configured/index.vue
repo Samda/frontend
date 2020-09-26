@@ -6,16 +6,16 @@
           div.mb-5.text-center
             nuxt-link(to="/configuration/configured")
               v-avatar(
-                size="80"
+                size="60"
                 tile)
                 v-img(src="https://www.khland.com.kh/assets/images/kh_lg.png")
           v-divider(color="#6b4912")
-    v-container(fluid style="padding-top: 100px;")
+    v-container(fluid style="padding-top: 120px;")
       v-row
         v-col(cols="12" sm="12" md="6" lg="6" xl="6")
           div.sidebar-carousel
             .text-centent
-              h1.config-header.text-h6.mt-8(style="color: #6b4912;" align="center" justify="center")
+              h1.config-header.text-h6.mt-2(style="color: #6b4912;" align="center" justify="center")
                 strong វីឡាតូលកូនកាត់
               v-btn.pa-2( to="/configuration" small tile text color="#5b3804")
                 v-icon(left) mdi-chevron-left
@@ -30,6 +30,9 @@
                 v-for="(item,i) in items"
                 :key="i"
                 :src="item.src")
+            .text-right
+              v-btn.mt-2(small outlined tile color="primary" dark) រក្សាទុក
+              v-btn.ml-2.mt-2(to="/configuration/download" small outlined tile color="primary" dark) ព័ត៌មានលម្អិត
         v-col.mt-n3(cols="12" sm="12" md="6" lg="6" xl="6")
           v-row.row-details(no-gutters)
             v-col.pl-3(cols="6")
@@ -59,7 +62,8 @@
               v-col.pl-3(cols="12")
                 .caption
                   strong សំភារៈសំរាប់សួន
-            configuredRow(v-for="n in 3" :key="n")
+            template(v-for="(config, index) in configured_options")
+              configuredRow(:key="index" :title="config.title" :price="config.price" :name="config.name" )
           v-row.row-details(no-gutters)
             v-col.pl-3(cols="6")
               .caption
@@ -79,7 +83,7 @@
             v-col.pl-3(cols="12")
               .pr-5.text-right
                 .subtitle-2 Total: 99000$
-    v-footer(padless)
+    v-footer(padless fixed)
       v-col(class="text-center" cols="12")
         div.caption(class="brown--text text--darken-4") KHLAND CO.,LTD.
 </template>
@@ -93,6 +97,18 @@ export default {
   },
   data () {
     return {
+      configured_options: [
+        {
+          title: "ផ្ការ",
+          price: 90,
+          name: '1120202010'
+        },
+        {
+          title: "ថូរផ្ការ",
+          price: 50,
+          name: '20202010'
+        }
+      ],
       item_details: [
         { active: true, title: 'Jason Oner', avatar: 'https://picsum.photos/200/200' },
         { active: true, title: 'Ranee Carlson', avatar: 'https://picsum.photos/200/200' },

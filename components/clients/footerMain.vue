@@ -2,28 +2,30 @@
 v-footer(padless, color="#8a6628")
   v-container.ma-0.pa-0(fluid)
     v-row
-      v-col(cols="12") 
+      v-col(cols="12")
         v-container
           v-row(align="center", justify="center")
-            v-divider.mx-4(style="height:5px")
-            v-btn.mx-4(
-              v-for="icon in icons",
-              :key="icon",
-              icon,
-              small,
-              fab,
-              outlined,
-              color="secondary"
-            )
-              v-icon(size="24px") {{ icon }}
-            v-divider
+            v-divider.mx-4(style="height:5px" color="#78a152")
+            .text-center
+              v-btn.mx-4(
+                v-for="icon in icons",
+                :key="icon",
+                icon,
+                small,
+                fab,
+                outlined,
+                color="secondary"
+              )
+                v-icon(size="24px") {{ icon }}
+            v-divider(color="#78a152")
     v-row(align="center", justify="center")
-      v-img(
-        max-height="120",
-        max-width="120",
-        contain,
-        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-      )
+      .text-center
+        v-img(
+          max-height="120",
+          max-width="120",
+          contain,
+          src="https://www.khland.com.kh/assets/images/kh_lg.png"
+        )
     v-row(justify="center")
       v-col(cols="12")
         h4.text-center.font-weight-regular.light-green--text.text--darken-2 Copyright &copy; khlang co,.LTD.
@@ -32,17 +34,17 @@ v-footer(padless, color="#8a6628")
         v-container(style="background-color:#8a6628")
           v-row(justify="center")
             v-btn(
-              v-for="title in itemTitle",
-              :key="title",
+              v-for="(title, i) in itemTitle",
+              :key="i",
               depressed,
-              style="background-color:#8a6628"
-            )
-              v-btn--flat
-                v-btn--text {{ title.text }}
+              style="background-color:#8a6628;"
+            ) {{ title.text }}
 </template>
 
 <script>
 export default {
+  name: "footerMain",
+  layout: "default",
   data() {
     return {
       icons: [

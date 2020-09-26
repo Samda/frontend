@@ -56,122 +56,64 @@ div
     v-row
       v-col(cols="12")
         v-img(
-          gradient="rgba(0,0,0,.4), rgba(0,0,0,.4) ",
+          gradient="rgba(0,0,0,.8), rgba(0,0,0,.4) ",
           height="450px",
-          src="https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/117879720_1802414966591401_3975173550225361756_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEAV2Utzzv-oLSnwD5JEX3qwMaW0-45qmfAxpbT7jmqZwcgkYBp3dxHhyGhfB3k8W0&_nc_ohc=J-dr_L3EApkAX9bPErf&_nc_ht=scontent.fpnh1-1.fna&oh=86f3958e691bdbab90412e3152202e6e&oe=5F8B99F0"
-        )
-          v-container
-            v-row.mb-15
-              v-col(cols="12")
-                container
-                  v-row(justify="center")
-                    h1.white--text Real Estate Cambodia with KH land
-                  v-row(justify="center")
-                    h5.white--text Our customer care team is among the highest-rated support squads online, fast, muilti
-            v-row.pt-15(justify="space-around", align="center")
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row(justify="center", align="center")
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-              v-col(cols="3")
-                v-container(fluid)
-                  v-row
-                    v-col
-                      v-img(
-                        max-height="60",
-                        max-width="60",
-                        contain,
-                        src="https://www.khland.com.kh/assets/images/kh_lg.png"
-                      )
-                      h4.white--text this is text
-                      h4.white--text this is text 2
-                      h4.white--text this is text 3
-
+          src="https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/117879720_1802414966591401_3975173550225361756_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_eui2=AeEAV2Utzzv-oLSnwD5JEX3qwMaW0-45qmfAxpbT7jmqZwcgkYBp3dxHhyGhfB3k8W0&_nc_ohc=J-dr_L3EApkAX9bPErf&_nc_ht=scontent.fpnh1-1.fna&oh=86f3958e691bdbab90412e3152202e6e&oe=5F8B99F0")
+          v-row
+            v-col(cols="12")
+              .text-center.mt-15
+                h1.mb-15.text--h4(style="color: #78a152;") ជ្រើរើសសំភារៈដោយខ្លួនអ្នកផ្ទាល់
+          v-row
+            v-col(
+              class="d-flex justify-space-around"
+              v-for="content in contents")
+              .text-center
+                p
+                  img(
+                    width="100"
+                    :src="content.image")
+                h5.text-h5.light-green--text.text-lighten-2 {{content.title}}
+                p.mt-3.body-2.light-green--text.text-lighten-2 {{content.text}}
     v-row(justify="center", align="center")
       v-col(cols="6")
         div(style="padding: 120px 0;")
-          h1.text-center.brown--text.pa-7 Build your dream house with us
+          h1.text-center.brown--text.pa-7 ជ្រើរើសផ្ទះរបស់អ្នក
           .text-center
-            v-btn.pa-7(to="/configuration", block, outlined, color="brown") Build now
+            v-btn.pa-7(to="/configuration", block, outlined, color="brown") ចុចត្រង់នេះ
 </template>
 
 <script>
 export default {
   data() {
     return {
-      hooperSettings: {
-        centerMode: true,
-        itemsToShow: 1,
-        itemsToSlide: 1,
-        playSpeed: 2000,
-        infiniteScroll: true,
-        wheelControl: false,
-        autoPlay: false,
-        transition: 1500,
-        playSpeed: 4000,
-        hoverPause: true,
-        breakpoints: {
-          2400: {
-            itemsToShow: 5,
-          },
-          1800: {
-            itemsToShow: 4,
-          },
-          1500: {
-            itemsToShow: 3,
-          },
-          1100: {
-            itemsToShow: 2.5,
-          },
-          0: {
-            itemsToShow: 1.5,
-          },
+      contents: [
+        {
+          title: "ផ្នែកខាងក្រៅផ្ទះ",
+          text: "ជ្រើរើសសោភណភាពនៃគេហដ្ឋានរបស់អ្នកដោយខ្លួនឯងបាន",
+          image: "https://expressyourselfpaint.com/wp-content/uploads/2015/06/exterior-icon1.png"
         },
-      },
-    };
+        {
+          title: "ផ្នែកខាងក្នុងផ្ទះ",
+          text: "បរិក្ខាប្រើប្រាស់ តុ ទូ កៅអី របស់របស់ដែលអ្នកចង់បាន",
+          image: "https://expressyourselfpaint.com/wp-content/uploads/2015/06/interior-icon1.png"
+        },
+        {
+          title: "ឧបករណ៍ប្រើប្រាស់",
+          text: "ជ្រើរើសរបស់របរប្រើប្រាស់ទូទៅនៅក្នុងផ្ទះ",
+          image: 'https://expressyourselfpaint.com/wp-content/uploads/2015/07/cabinet-icon.png'
+        }
+      ]
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
 .parallax-container {
   position: relative;
 }
+
 .parallax-title {
   position: absolute;
   top: 30%;
@@ -182,6 +124,7 @@ export default {
   color: white;
   text-align: center;
 }
+
 #background {
   color: brightness(10%) !important;
 }

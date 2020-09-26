@@ -1,22 +1,36 @@
 <template lang="pug">
 v-row.row-data(no-gutters)
   v-col.pl-3(cols="6")
-    .caption ម៉ូតផ្ការ
+    .caption {{title}}
     v-avatar.detail-image(tile size="80px")
       img(src="https://i.pinimg.com/600x315/3f/6a/2a/3f6a2adab86aea19e3abbb6846f8c551.jpg")
   v-col(cols="2")
-    .caption Flower Name
+    .caption {{name}}
   v-col(cols="2")
     v-btn( x-small tile icon color="primary")
       v-icon mdi-pencil
   v-col.pr-5(cols="2")
-    .caption.text-right 80$
+    .caption.text-right {{price}}$
 </template>
 
 <script>
 export default {
   name: 'configuredRow',
-  layout: 'configuration'
+  layout: 'configuration',
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    }
+  }
 }
 </script>
 

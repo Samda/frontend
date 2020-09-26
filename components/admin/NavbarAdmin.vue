@@ -14,6 +14,7 @@
         v-divider
         v-list(dense)
           v-list-item(
+            color="brown darken-4"
             v-for="item in items"
             :key="item.text"
             router
@@ -42,7 +43,9 @@
       v-app-bar-nav-icon(color="#6b4912" @click="drawer = true")
       v-toolbar-title
         span.title
-          nuxt-link.text-decoration-none(to="/admin") KH LAND
+          nuxt-link.text-decoration-none(to="/admin")
+           span.brown--text.text-darken-4 KH
+           span.light-green--text.text-darken-3 LAND
       v-spacer
       v-menu(
         z-index="90"
