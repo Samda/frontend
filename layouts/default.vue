@@ -4,20 +4,20 @@ v-main
     navBar
     v-container
       Nuxt
-    FooterMain
+    footerMain
     feedBack
 </template>
 
 <script>
 import navBar from "@/components/clients/navBar";
-import FooterMain from "@/components/clients/FooterMain";
+import footerMain from "@/components/clients/FooterMain";
 import feedBack from "@/components/clients/feedBack";
 
 export default {
   name: "default",
   components: {
     feedBack,
-    FooterMain,
+    footerMain,
     navBar,
   },
 };

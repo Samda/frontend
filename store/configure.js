@@ -41,17 +41,17 @@ export const state = () => ({
             {
               id: 1,
               image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
             },
             {
               id: 2,
               image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg'
             },
             {
               id: 3,
               image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg'
             }
           ]
         },
@@ -83,17 +83,17 @@ export const state = () => ({
             {
               id: 1,
               image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
             },
             {
               id: 2,
               image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg'
             },
             {
               id: 3,
               image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg'
             }
           ]
         }
@@ -132,17 +132,17 @@ export const state = () => ({
             {
               id: 1,
               image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
             },
             {
               id: 2,
               image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg'
             },
             {
               id: 3,
               image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg'
             }
           ]
         }
@@ -160,17 +160,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://5.imimg.com/data5/IH/XU/MY-1689641/ceramic-wall-tiles-250x250.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://5.imimg.com/data5/IH/XU/MY-1689641/ceramic-wall-tiles-250x250.jpg'
             },
             {
               id: 2,
               image: 'https://media.casa39.com/media/catalog/product/cache/3ef59482406050ce57d87f18d0364b53/j/8/j86619.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://media.casa39.com/media/catalog/product/cache/3ef59482406050ce57d87f18d0364b53/j/8/j86619.jpg'
             },
             {
               id: 3,
               image: 'https://lh3.googleusercontent.com/d/1eN0_zEDM_tG5ESDDBj241eoHU5sXiJEY',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://lh3.googleusercontent.com/d/1eN0_zEDM_tG5ESDDBj241eoHU5sXiJEY'
             }
           ]
         },
@@ -181,17 +181,17 @@ export const state = () => ({
             {
               id: 1,
               image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
             },
             {
               id: 2,
               image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg'
             },
             {
               id: 3,
               image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg'
             }
           ]
         }
@@ -209,17 +209,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://5.imimg.com/data5/IH/XU/MY-1689641/ceramic-wall-tiles-250x250.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://5.imimg.com/data5/IH/XU/MY-1689641/ceramic-wall-tiles-250x250.jpg'
             },
             {
               id: 2,
               image: 'https://media.casa39.com/media/catalog/product/cache/3ef59482406050ce57d87f18d0364b53/j/8/j86619.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://media.casa39.com/media/catalog/product/cache/3ef59482406050ce57d87f18d0364b53/j/8/j86619.jpg'
             },
             {
               id: 3,
               image: 'https://lh3.googleusercontent.com/d/1eN0_zEDM_tG5ESDDBj241eoHU5sXiJEY',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://lh3.googleusercontent.com/d/1eN0_zEDM_tG5ESDDBj241eoHU5sXiJEY'
             }
           ]
         },
@@ -230,17 +230,17 @@ export const state = () => ({
             {
               id: 1,
               image: "https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg",
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
             },
             {
               id: 2,
               image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://www.textures.com/system/categories/2130/frontend-large.jpg'
             },
             {
               id: 3,
               image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg',
-              pre_image: 'https://picsum.photos/600/350'
+              pre_image: 'https://i.pinimg.com/originals/74/2a/0d/742a0d0853d0da2bb6b579834c618610.jpg'
             }
           ]
         }
@@ -307,17 +307,17 @@ export const state = () => ({
             {
               id: 1,
               image: 'https://5.imimg.com/data5/KC/UX/MY-45131211/wash-basin-500x500.jpg',
-              pre_image: 'https://i.picsum.photos/id/554/600/350.jpg?hmac=DRfbWTCjVTtoTvp_MsSuBCofpnKzNTRIIDZtHokMGXo'
+              pre_image: 'https://5.imimg.com/data5/KC/UX/MY-45131211/wash-basin-500x500.jpg'
             },
             {
               id: 2,
               image: 'https://secure.img1-fg.wfcdn.com/im/33521391/resize-h600-w600%5Ecompr-r85/5786/57869117/Bathroom+Wall+Tile.jpg',
-              pre_image: 'https://i.picsum.photos/id/642/600/350.jpg?hmac=e0ycJ5tS4UU8h1FEPJbbGSgc4YnlgsIQrwUDFJt39Jk'
+              pre_image: 'https://secure.img1-fg.wfcdn.com/im/33521391/resize-h600-w600%5Ecompr-r85/5786/57869117/Bathroom+Wall+Tile.jpg'
             },
             {
               id: 3,
               image: 'https://cdn.shopify.com/s/files/1/1140/6776/products/Anchorage_Cream_Tiles_on_Bathroom_Wall_grande.jpg?v=1548782131',
-              pre_image: 'https://i.picsum.photos/id/330/600/350.jpg?hmac=_gmZDbngfHbt9NDQZSdffksMjYQzKf28JwhnPzGpimE'
+              pre_image: 'https://cdn.shopify.com/s/files/1/1140/6776/products/Anchorage_Cream_Tiles_on_Bathroom_Wall_grande.jpg?v=1548782131'
             }
           ]
         },
