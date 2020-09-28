@@ -55,7 +55,7 @@
                 v-card-actions
                   v-spacer
                   v-btn(color="blue darken-1" text @click="dialog = false") Close
-                  v-btn(color="blue darken-1" text @click="addHouseModel(house_model_attr)") Save
+                  v-btn(color="blue darken-1" text @click="dialog = false") Save
       v-row
         v-col(cols="12" md="12" sm="12")
           v-container
