@@ -58,27 +58,13 @@
             v-col(cols="2")
               .pr-5.text-right.caption 90000$
           div.row-details
-            v-row.row-data(no-gutters)
-              v-col.pl-3(cols="12")
-                .caption
-                  strong សំភារៈសំរាប់សួន
-            template(v-for="(config, index) in configured_options")
-              configuredRow(:key="index" :title="config.title" :price="config.price" :name="config.name" )
-          v-row.row-details(no-gutters)
-            v-col.pl-3(cols="6")
-              .caption
-                strong សម្ភារៈសំរាប់ដំបូល
-              v-row
-                v-col
-                  div.caption ផ្ការ
-            v-col(cols="2")
-              span.caption 20200914
-            v-col(cols="2")
-              v-spacer
-              v-btn( x-small tile icon color="primary")
-                v-icon mdi-pencil
-            v-col(cols="2")
-              .pr-5.text-right.caption 90$
+            template(v-for="(configuration, i) in configured_options")
+              v-row.row-data(no-gutters)
+                v-col.pl-3(cols="12")
+                  .caption
+                    strong {{configuration.title}}
+              template(v-for="(config, index) in configuration.items")
+                configuredRow(:key="index" :image="config.image" :title="config.title" :price="config.price" :name="config.name" )
           v-row.row-data
             v-col.pl-3(cols="12")
               .pr-5.text-right
@@ -99,14 +85,73 @@ export default {
     return {
       configured_options: [
         {
-          title: "ផ្ការ",
-          price: 90,
-          name: '1120202010'
+          title: 'សំភារៈសំរាប់សួន',
+          items: [
+            {
+              title: "ពូជផ្ការ",
+              price: 90,
+              name: '1120202010',
+              image: 'https://homebnc.com/homeimg/2017/03/front-yard-landscaping-garden-ideas-featured-homebnc.jpg'
+            },
+            {
+              title: "ថូរផ្ការ",
+              price: 50,
+              name: '20202010',
+              image: "https://5.imimg.com/data5/SY/ED/MY-23421727/outdoor-garden-pots-500x500.jpg"
+            },
+            {
+              title: "ពូជស្មៅ",
+              price: 50,
+              name: '20202010',
+              image: "https://cdn.shopify.com/s/files/1/1191/5138/products/il_570xN.769073785_cvj9_grande.jpg?v=1456849847"
+            },
+            {
+              title: "ការ៉ូសំរាប់សួន",
+              price: 50,
+              name: '20202010',
+              image: "https://5.imimg.com/data5/UI/RU/MY-2724088/garden-tile-500x500.jpg"
+            }
+          ]
         },
         {
-          title: "ថូរផ្ការ",
-          price: 50,
-          name: '20202010'
+          title: 'សំភារៈក្នុងខាងក្រៅផ្ទះ',
+          items: [
+            {
+              title: "ក្បឿងដំបូល",
+              price: 90,
+              name: '1120202010',
+              image: 'https://www.cupapizarras.com/wp-content/uploads/2018/11/CUPA-natural-slate.png'
+            },
+            {
+              title: "ការ៉ូជញ្ជាំង",
+              price: 50,
+              name: '20202010',
+              image: 'https://mobileimages.lowes.com/product/converted/097518/097518333775.jpg'
+            }
+          ]
+        },
+        {
+          title: 'សំភារៈក្នុងបន្ទប់ទទួលភ្ញៀវ',
+          items: [
+            {
+              title: "សាឡុង",
+              price: 90,
+              name: '1120202010',
+              image: 'https://www.pngkey.com/png/full/250-2506199_home-furniture-png.png'
+            },
+            {
+              title: "ម៉ូដកៅអី",
+              price: 50,
+              name: '20202010',
+              image: 'https://raw.githubusercontent.com/Samda/khland-assets/master/char1.png'
+            },
+            {
+              title: "ថូរផ្ការ",
+              price: 50,
+              name: '20202010',
+              image: 'https://miro.medium.com/max/320/0*g-BhuwNygRdwy2wt.jpg'
+            }
+          ]
         }
       ],
       item_details: [
@@ -123,10 +168,10 @@ export default {
           src: 'https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/117802743_1802415066591391_2684241018431028380_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=ykikfurTGrsAX_iV5FG&_nc_ht=scontent.fpnh1-1.fna&oh=09c1db641f1e2fe67816146d6181ea23&oe=5F84CBA0',
         },
         {
-          src: 'https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/118079817_1802415026591395_8305645295699313094_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_ohc=J5AuWzL8DGoAX8GW_1o&_nc_ht=scontent.fpnh1-1.fna&oh=efc145f8f5004aa8b9230cece3717ee0&oe=5F860604',
+          src: 'https://scontent.fpnh1-2.fna.fbcdn.net/v/t1.0-9/117716105_1802415089924722_3006423376808006100_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=xSJ8KQ3NDbwAX8467My&_nc_ht=scontent.fpnh1-2.fna&oh=37f05b376c75c2bbac246734d3c042af&oe=5F9578A0',
         },
         {
-          src: 'https://scontent.fpnh1-1.fna.fbcdn.net/v/t1.0-9/118088335_1802414846591413_3822124463928800760_o.jpg?_nc_cat=102&_nc_sid=730e14&_nc_ohc=FjJyRfVL7ZkAX-PYshO&_nc_ht=scontent.fpnh1-1.fna&oh=802913714830902fb4d47b691f73eab4&oe=5F863324',
+          src: 'https://scontent.fpnh1-2.fna.fbcdn.net/v/t1.0-9/117716105_1802415089924722_3006423376808006100_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=xSJ8KQ3NDbwAX8467My&_nc_ht=scontent.fpnh1-2.fna&oh=37f05b376c75c2bbac246734d3c042af&oe=5F9578A0',
         },
       ]
     }

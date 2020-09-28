@@ -62,7 +62,6 @@
       v-col(md="3" v-if="!houses > 0")
         v-card( color="brown" max-width="300")
           h1 No houses yet
-
 </template>
 <script>
 

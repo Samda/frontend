@@ -60,10 +60,10 @@ export default {
   data(){
     return {
       house: {
-        square_meter: '',
-        building_square_meter: '',
-        location: '',
-        house_model_id: '',
+        square_meter: '2200',
+        building_square_meter: '2000',
+        location: 'Phnom Penh',
+        house_model_id: 1,
         house_pictures: [],
       },
       house_models: [
@@ -96,7 +96,7 @@ export default {
         square_meter: '',
         building_square_meter: '',
         location: '',
-        house_model_id: '',
+        house_model_id: 0,
         house_pictures: [],
       }
     },

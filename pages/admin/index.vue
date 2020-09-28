@@ -45,7 +45,7 @@ export default {
         title: 'ផ្ទះអតិថិជនរៀប',
         total: '២៣',
         unit: 'ខ្នង',
-        link: 'configured_houses'
+        link: 'admin/modified_houses'
       },
       {
         icon: 'mdi-home-group',
@@ -54,7 +54,7 @@ export default {
         title: 'ម៉ូតសំរាប់ផ្ទះគំរូ',
         total: '៤០',
         unit: 'ម៉ូត',
-        link: 'house_models'
+        link: 'admin/house_models'
       },
       {
         icon: 'mdi-account-group',
@@ -63,7 +63,7 @@ export default {
         title: 'ភ្នាក់ងារលក់',
         total: '៩៩',
         unit: 'នាក់',
-        link: 'agencies'
+        link: 'admin/users'
       },
       {
         icon: 'mdi-account-tie',
@@ -72,16 +72,25 @@ export default {
         title: 'ភ្នាក់ងារទីផ្សារ',
         total: '៨៩',
         unit: 'នាក់',
-        link: '/team_sales'
+        link: 'admin/users'
       },
       {
         icon: 'mdi-briefcase-account-outline',
         color: '#1F7087',
         src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
-        title: 'Management',
+        title: 'បុគ្គលិក',
         total: '10',
         unit: 'នាក់',
-        link: '/users'
+        link: 'admin/users'
+      },
+      {
+        icon: 'mdi-briefcase-account-outline',
+        color: '#1F7087',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'សំភារៈ, ឧបករណ៍',
+        total: '100',
+        unit: 'មុខទំនេញ',
+        link: 'admin/utilities'
       }
     ]
   })

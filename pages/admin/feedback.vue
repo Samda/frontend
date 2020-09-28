@@ -1,5 +1,5 @@
 <template lang="pug">
-v-container
+v-container(fluid)
   v-row
     v-col(cols="12" md="5" ms="4")
       v-container(fluid)
@@ -9,7 +9,6 @@ v-container
               v-list-item-content
                 v-list-item-title
                   h1.headline.mb-1
-                    | {{current_page}}
                     | Reviews from the customers
                 v-list-item-subtitle
                   p.mb-5 Best way to improve the system is tracking how user feel with it.

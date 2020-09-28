@@ -2,8 +2,8 @@
 v-row.row-data(no-gutters)
   v-col.pl-3(cols="6")
     .caption {{title}}
-    v-avatar.detail-image(tile size="80px")
-      img(src="https://i.pinimg.com/600x315/3f/6a/2a/3f6a2adab86aea19e3abbb6846f8c551.jpg")
+    .detail-image(tile size="80px")
+      img.align-self-center(:src="image")
   v-col(cols="2")
     .caption {{name}}
   v-col(cols="2")
@@ -18,6 +18,10 @@ export default {
   name: 'configuredRow',
   layout: 'configuration',
   props: {
+    image: {
+      type: String,
+      required: true
+    },
     title: {
       type: String,
       required: true
@@ -39,8 +43,24 @@ export default {
 $color-primary: #6b4912;
 
 .detail-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
   border-radius: 5px !important;
   transition: all .2s;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+
+  img {
+    display: block;
+    margin: auto 0;
+    width: 100%;
+  }
 }
 
 .detail-image:hover{

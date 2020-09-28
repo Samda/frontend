@@ -107,8 +107,8 @@
           { icon: 'mdi-home-group', text: 'ប្រភេទម៉ូតផ្ទះគំរូ', route: "/admin/house_models" },
           { icon: 'mdi-folder-home', text: 'ផ្ទះគំរូរបស់អតិថិជន', route: "/admin/modified_houses" },
           { icon: 'mdi-home', text: 'សំភារះសំរាប់ផ្ទះ', route: '/admin/utilities'},
-          { icon: 'mdi-account-group', text: 'ផ្នាក់ងារលក់', route: "/admin/agencies" },
-          { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import-file" },
+          { icon: 'mdi-account-group', text: 'សមាជិក', route: "/admin/users" },
+          // { icon: 'mdi-cloud-upload', text: 'បញ្ចូលទិន្ន័យផ្ទះ', route: "/admin/import-file" },
           { icon: 'mdi-lifebuoy', text: 'ជំនួយក្នុងការប្រើប្រាស់', route: "/admin/system-support" },
           { icon: 'mdi-comment-account-outline', text: 'មតិអតិថិជន', route: "/admin/feedback" }
         ],

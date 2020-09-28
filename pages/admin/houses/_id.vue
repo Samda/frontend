@@ -1,30 +1,5 @@
 <template lang="pug">
 div
-  v-container.pb-1(fluid style="position: fixed; z-index: 9999; background: #fff;")
-    v-row
-      v-col(cols="12")
-        v-sheet.mt-n5(
-          class="mx-auto"
-          max-width="100%")
-          v-bottom-navigation.elevation-0( horizontal)
-            v-slide-group(show-arrows center-active mandatory)
-              template(v-for="(title, index) in getConfigTitles")
-                v-slide-item(:key="index")
-                  v-btn.btn-timeline.pt-2(
-                    x-small
-                    :href="'#'+replaceSpaceWith(title, '_')"
-                    :ripple="false"
-                    tile)
-                    | {{title}}
-                    v-icon.pr-0(left) mdi-numeric-{{index + 1}}
-                v-divider(
-                  class="my-4"
-                  inset
-                  vertical)
-              v-slide-item
-                v-btn.btn-timeline.pt-2(router to="/configuration/configured")
-                  | ពិពណ៌នា
-                  v-icon(left) mdi-check
   v-container(fluid)
     v-row(no-gutters)
       v-col(cols="12" md="8" sm="12")
@@ -34,7 +9,7 @@ div
               .text-center.mt-15.text-uppercase
                 span.text-h5.brown--text
                   strong វីឡាតូលកូនកាត់
-              v-btn.pa-2( to="/" small tile text color="#5b3804")
+              v-btn.pa-2( to="houses" small tile text color="#5b3804")
                 v-icon(left) mdi-chevron-left
                 | go back
             v-carousel(
@@ -87,9 +62,7 @@ div
                                 :src="value.image"
                                 lazy-src="https://www.khland.com.kh/assets/images/kh_lg.png"
                                 height="80"
-                                class="text-right pa-2 item-image"
-                                :class="active ? 'item-active' : ''"
-                                @click=" getImage(value.pre_image); toggle(); setConfigOptions(config.head_title, con_attr.title, value.id);")
+                                class="text-right pa-2 item-image")
                                 template(v-slot:placeholder)
                                   v-row(
                                     class="fill-height ma-0"
@@ -120,6 +93,7 @@ div
 <script>
 import stickybits from "stickybits"
 export default {
+  layout: 'admin',
   data () {
     return {
       prev_image: '',
@@ -227,10 +201,6 @@ $color-primary: #6b4912;
   z-index: 999 !important;
 }
 
-a.btn-timeline.v-btn--active {
-  border-bottom: 2px solid #5b3804;
-}
-
 span.v-btn__content span, i {
   margin-right: 0px !important;
   color: #5b3804 !important;
@@ -257,7 +227,6 @@ div.config-section {
 
 div.image-active {
   background: red;
-  border: 2px solid red;
 }
 
 div.config-values {
@@ -269,7 +238,6 @@ div.config-values {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #5b3804;
     width: 30%;
     height: 70px;
     cursor: pointer;
@@ -283,10 +251,6 @@ div.config-values {
       width: 100%;
     }
   }
-}
-
-.item-active {
-  border: 2px dashed $color-primary;
 }
 
 @media only screen and (min-width: 979px) {

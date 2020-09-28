@@ -2,7 +2,7 @@
 v-main
   v-app#inspire
     navBar
-    v-container
+    v-container(fluid)
       Nuxt
     footerMain
     feedBack
