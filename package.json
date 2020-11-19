@@ -8,7 +8,8 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "generate": "nuxt build && nuxt export"
+    "generate": "nuxt build && nuxt export",
+    "heroku-poostbuild": "npm run build"
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
