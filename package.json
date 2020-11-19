@@ -13,7 +13,7 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt build && nuxt export",
-    "heroku-postbuild": "npm run generate"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
