@@ -18,9 +18,7 @@
   "dependencies": {
     "html2canvas": "^1.0.0-rc.7",
     "jspdf": "^2.1.1",
-    "nuxt": "^2.14.6"
-  },
-  "devDependencies": {
+    "nuxt": "^2.14.6",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/vuetify": "^1.11.2",
@@ -43,6 +41,5 @@
     "vue2-scrollspy": "^2.3.1",
     "vuetify-loader": "^1.5.0",
     "vuex": "^3.5.1"
-  },
-  "app_url": "http://localhost:3000"
+  }
 }
