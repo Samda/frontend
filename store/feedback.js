@@ -65,7 +65,7 @@ export const actions = {
 export const getters = {
 
   isLoading(state){
-      return state.isLoading
+    return state.isLoading
   },
 
   GET_FEEDBACKS(state){

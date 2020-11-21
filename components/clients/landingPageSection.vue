@@ -9,21 +9,36 @@ div
       v-for="(color, i) in colors"
       :key="i")
       v-row
-        v-col(cols="12")
-          v-img(
-            gradient="rgba(0,0,0,.5), rgba(0,0,0,.5) ",
-            height="500px",
-            :src="color.image")
-            v-container
-              v-row
-                v-col(cols="12" md="8" sm="8" lg="8" xl="8")
-                  .text-left.mt-15
-                    h1.text-h4 {{color.title}}
-                    h5.text-h5 {{color.content}}
+        div(class="col col-12")
+          div(class="v-card v-card--flat v-sheet v-sheet--tile theme--dark" dark="")
+            v-img(
+              :src="color.image"
+              class="grey lighten-2"
+              height="400"
+              width="100%")
+              v-row(
+                class="fill-height pa-3"
+                align="center" justify="center")
+                v-col(
+                  cols="12"
+                  md="7"
+                  offset-md="5")
+                  h1(class="text-h4 font-weight-light") {{color.title}}
+                  div(class="text-h6 text-uppercase pl-2 mb-4") {{color.content}}
   v-container
     v-row(justify="space-around", align="center", height="500px")
+      div( class="col col-12")
+        div(class="v-card v-card--flat v-sheet v-sheet--tile theme--dark" dark="")
+          div(class="v-responsive v-image grey lighten-2" style="height: 400px; width: 100%;")
+            div(class="v-responsive__sizer" style="padding-bottom: 66.7273%;")
+              div(class="v-image__image v-image__image--cover" style="background-image: url('https://blog-free.johnleider.com/img/blurcamera.d2d68327.jpg'); background-position: center center;")
+              div(class="v-responsive__content" style="width: 1100px;")
+              div(class="row fill-height pa-3 align-center")
+              div(class="col-md-7 offset-md-5 col-12")
+                h1(class="display-3 font-weight-light") The Art Of Travel
+                div(class="subheading text-uppercase pl-2 mb-4") Finding Beauty, One flight at a time
       v-col.pa-15(cols="12", md="6")
-        div
+        div.pa-10
           h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4 modify dream house with us
           p.body-1.text-center.brown--text.text--darken-4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
       v-col(cols="12", md="6")
@@ -33,8 +48,8 @@ div
           :src="require('~/assets/images/featureImage1.jpg')"
         )
     v-divider
-    v-row(justify="space-around", align="center", height="500px")
-      v-col.pa-10(cols="12", md="6")
+    v-row.pa-10(justify="space-around", align="center", height="500px")
+      v-col(cols="12", md="6")
         v-img(
           :src="require('~/assets/images/featureImage2.jpg')"
         )
@@ -43,7 +58,7 @@ div
           h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4 Start building your dream house with us today !
           p.body-1.text-center.brown--text.text--darken-4 We provide you tools and ability to select all appliances, decoration equipments and housing utilities.
     v-divider
-    v-row(justify="space-around", align="center", height="500px")
+    v-row.pa-10(justify="space-around", align="center", height="500px")
       v-col(cols="12", md="6")
         div
           h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4
@@ -57,7 +72,7 @@ div
 
   v-container
     v-row
-      v-col(cols="6", lg="3", md="4", sm="4", :key="i", v-for="i in 6")
+      v-col(cols="6", lg="3", md="4", sm="4", :key="i", v-for="i in 4")
         v-card.mx-auto(max-width="400")
           v-img.white--text.align-end(
             height="200px",
@@ -137,7 +152,7 @@ export default {
       contents: [
         {
           title: "ផ្នែកខាងក្រៅផ្ទះ",
-          text: "ជ្រើរើសសោភណភាពនៃគេហដ្ឋានរបស់អ្នកដោយខ្លួនឯងបាន",
+          text: "ជ្រើរើសសោភណភាពនៃគេហដ្ឋានរបស់អ្នកដោយខ្លួនឯង",
           image: "https://expressyourselfpaint.com/wp-content/uploads/2015/06/exterior-icon1.png"
         },
         {

@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-
+let development = process.env.NODE_ENV !== 'production'
 export default {
   server: {
     port: 8000, // default: 3000
@@ -23,7 +23,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'KH LAND Co.,ltd.',
+    title: 'House Modify Application by KH LAND Co.,LTD',
     meta: [
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/ms-icon-144x144.png" },
@@ -114,9 +114,8 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.npm_package_app_url
+    baseURL: development ? 'http://localhost:3000' : 'https://house-modify-api.herokuapp.com'
   },
-
   auth: {
     cookie: {
       options: {

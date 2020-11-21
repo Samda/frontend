@@ -66,7 +66,7 @@
                     v-for="(config, index) in configureOptions"
                     :key="i")
                     v-expansion-panel-header {{config.title}}
-                    v-expansion-panel-content(v-for="(con_attr, index) in config.attributes")
+                    v-expansion-panel-content(v-for="(con_attr, index) in config.attributes", :key="index")
                       v-container
                         v-row
                           v-col.text-overline.config-key(cols="12")

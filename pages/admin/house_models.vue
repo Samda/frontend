@@ -41,7 +41,7 @@
                   v-btn(color="blue darken-1" text @click="addHouseModel(house_model_attr)") Save
       v-col(cols="12")
         v-row
-          v-col(cols="6" sm="4" md="4" lg="4" xl="4" v-for="i in 8")
+          v-col(cols="6", sm="4", md="4", lg="4", xl="4", v-for="i in 8", :key="i")
             v-card(
               class="mx-auto"
               max-width="400")

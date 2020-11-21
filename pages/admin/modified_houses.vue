@@ -39,7 +39,7 @@
                     img(src="https://www.pngkey.com/png/full/250-2506199_home-furniture-png.png")
         template(v-for=" i in 8")
           v-col(cols="12" sm="4" md="4" lg="4" xl="4"
-            v-for="(house, i) in modified_houses")
+            v-for="(house, i) in modified_houses", :key="i")
             v-card(
               class="mx-auto"
               max-width="344")
