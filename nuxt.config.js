@@ -89,7 +89,16 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     "nuxt-leaflet",
+    '@nuxtjs/proxy'
   ],
+  proxy: {
+    '/api': {
+      target: 'https://house-modify-api.herokuapp.com/',
+      pathRewrite: {
+        '^/api' : '/'
+        }
+      }
+  },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
