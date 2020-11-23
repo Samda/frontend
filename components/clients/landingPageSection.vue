@@ -16,30 +16,19 @@ div
               class="grey lighten-2"
               height="400"
               width="100%")
-              v-row(
+              v-row.d-none.d-sm-flex(
                 class="fill-height pa-3"
                 align="center" justify="center")
-                v-col(
+                v-col.pa-10(
                   cols="12"
-                  md="7"
-                  offset-md="5")
-                  h1(class="text-h4 font-weight-light") {{color.title}}
-                  div(class="text-h6 text-uppercase pl-2 mb-4") {{color.content}}
+                  md="7" style="background: rgba(121, 163, 82, 0.8);")
+                  h1.mb-5.text-center.text-h4.font-weight-bold(style="color: #6b4912;") {{color.title}}
+                  div.text-center.text--darken-brown-4.text-h6.text-uppercase(style="color: #6b4912;") {{color.content}}
   v-container
     v-row(justify="space-around", align="center", height="500px")
-      div( class="col col-12")
-        div(class="v-card v-card--flat v-sheet v-sheet--tile theme--dark" dark="")
-          div(class="v-responsive v-image grey lighten-2" style="height: 400px; width: 100%;")
-            div(class="v-responsive__sizer" style="padding-bottom: 66.7273%;")
-              div(class="v-image__image v-image__image--cover" style="background-image: url('https://blog-free.johnleider.com/img/blurcamera.d2d68327.jpg'); background-position: center center;")
-              div(class="v-responsive__content" style="width: 1100px;")
-              div(class="row fill-height pa-3 align-center")
-              div(class="col-md-7 offset-md-5 col-12")
-                h1(class="display-3 font-weight-light") The Art Of Travel
-                div(class="subheading text-uppercase pl-2 mb-4") Finding Beauty, One flight at a time
-      v-col.pa-15(cols="12", md="6")
-        div.pa-10
-          h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4 modify dream house with us
+      v-col.py-15(cols="12", md="6")
+        div.py-10
+          h1.mb-5.text-h5.text-center.text-uppercase.brown--text.text--darken-4 modify dream house with us
           p.body-1.text-center.brown--text.text--darken-4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
       v-col(cols="12", md="6")
         v-img(
@@ -55,13 +44,13 @@ div
         )
       v-col(cols="12", md="6")
         div
-          h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4 Start building your dream house with us today !
+          h1.mb-5.text-h5.text-center.text-uppercase.brown--text.text--darken-4 Start building your dream house with us today !
           p.body-1.text-center.brown--text.text--darken-4 We provide you tools and ability to select all appliances, decoration equipments and housing utilities.
     v-divider
     v-row.pa-10(justify="space-around", align="center", height="500px")
       v-col(cols="12", md="6")
         div
-          h1.text-h5.text-center.text-uppercase.brown--text.text--darken-4
+          h1.mb-5.text-h5.text-center.text-uppercase.brown--text.text--darken-4
             | Choose your favorite materials
           p.body-1.text-center.brown--text.text--darken-4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
       v-col.pa-10(cols="12", md="6")
@@ -76,7 +65,6 @@ div
         v-card.mx-auto(max-width="400")
           v-img.white--text.align-end(
             height="200px",
-            src="./static/"
             :src="require('~/assets/images/house.jpg')"
           )
             v-card-title Twin Villa

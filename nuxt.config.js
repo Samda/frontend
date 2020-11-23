@@ -88,7 +88,6 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    "nuxt-leaflet",
     '@nuxtjs/proxy'
   ],
   proxy: {

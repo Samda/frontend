@@ -88,5 +88,5 @@ sw.*
 
 # Vim swap files
 *.swp
-dist/
+dist
 themes
