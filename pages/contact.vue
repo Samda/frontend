@@ -24,7 +24,8 @@ v-container(fluid)
 
 export default {
   layout: "default"
-};
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -45,7 +46,7 @@ export default {
 }
 
 @media only screen
-   and (min-width : 1600px) {
+   and (max-width : 1600px) {
      .map-responsive{
          overflow:hidden;
          padding-bottom:20.25%;
@@ -63,7 +64,25 @@ export default {
 }
 
 @media only screen
-   and (min-width : 1200px) {
+   and (max-width : 1200px) {
+     .map-responsive{
+         overflow:hidden;
+         padding-bottom:20.25%;
+         position:relative;
+         height:0;
+     }
+
+     .map-responsive iframe{
+         left:0;
+         top:0;
+         height:100%;
+         width:100%;
+         position:absolute;
+     }
+}
+
+@media only screen
+   and (max-width : 768px) {
      .map-responsive{
          overflow:hidden;
          padding-bottom:30.25%;
@@ -81,10 +100,10 @@ export default {
 }
 
 @media only screen
-   and (min-width : 768px) {
+   and (max-width : 320px) {
      .map-responsive{
          overflow:hidden;
-         padding-bottom:40.25%;
+         padding-bottom:50.25%;
          position:relative;
          height:0;
      }
@@ -99,7 +118,7 @@ export default {
 }
 
 @media only screen
-   and (min-width : 320px) {
+   and (max-width : 320px) {
      .map-responsive{
          overflow:hidden;
          padding-bottom:50.25%;
