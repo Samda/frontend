@@ -53,7 +53,6 @@ export default {
          position:relative;
          height:0;
      }
-
      .map-responsive iframe{
          left:0;
          top:0;
@@ -71,7 +70,6 @@ export default {
          position:relative;
          height:0;
      }
-
      .map-responsive iframe{
          left:0;
          top:0;
