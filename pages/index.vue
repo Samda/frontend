@@ -5,6 +5,7 @@ v-app
 
 <script>
 import landingPageSection from '@/components/clients/landingPageSection'
+
 export default {
   layout: "default",
   head () {

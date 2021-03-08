@@ -31,7 +31,6 @@ v-container(style="position: fixed; top: 10px;padding: 0px; z-index: 9999;")
 export default {
   name: 'navbarConfig',
   layout: 'configuration'
-  props: ['getConfigTitles']
 }
 </script>
 

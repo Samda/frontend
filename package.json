@@ -13,8 +13,7 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt build && nuxt export",
-    "deploy-static": "nuxt build && nuxt export && cd dist/ && git init && git add . && git commit -m 'deploy' && git remote add origin git@github.com:house-modify/house-modify.github.io.git && git push origin master -f",
-    "heroku-postbuild": "npm run build"
+    "deploy": "nuxt build && nuxt export && cd dist/ && git init && git add . && git commit -m 'deploy' && git remote add origin git@github.com:house-modify/house-modify.github.io.git && git push origin master -f"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
